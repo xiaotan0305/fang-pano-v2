@@ -200,6 +200,8 @@ function initPanoramaHouse() {
 
     registerEventListener();
     showFirstHotSpot();
+
+    initClickEvent();
 }
 
 function init3DHouse() {
@@ -222,6 +224,8 @@ function init3DHouse() {
     setOverviewCameraControllerDistance(isLandscape);
     setDefaultCameraPosition(isLandscape);
     showFirstHotSpotAfterLoading();
+
+    initClickEvent();
 }
 
 function initThreejs() {
@@ -2291,4 +2295,14 @@ function onThumbnailClicked(thumbnailElement, needClick) {
     if (needClick) {
         thumbnail.click();
     }
+}
+
+function initClickEvent() {
+    console.log('a');
+    document.getElementById('switchToOverviewDiv').addEventListener('click', onSwitchToOverviewClicked);
+    document.getElementById('switchVRButton').addEventListener('click', onSwitchVRMode);
+    document.getElementById('zoomInDiv').addEventListener('click', onZoomInClicked);
+    document.getElementById('zoomOutDiv').addEventListener('click', onZoomOutClicked);
+    document.getElementById('switchToHotSpotViewDiv').addEventListener('click', onSwitchToHotSpotViewClicked);
+    document.getElementById('thumbnail-control-button').addEventListener('click', onThumbnailControllerClicked);
 }
