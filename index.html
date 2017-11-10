@@ -20,15 +20,15 @@
     <link rel="stylesheet" href="src/css/bootstrap-horizon.css">
     <link rel="stylesheet" href="src/css/thumbnail.css">
 
-    <link rel="shortcut icon" sizes="196x196" href="src/textures/logo.png">
-    <link rel="apple-touch-icon" href="src/textures/logo.png">
+    <link rel="shortcut icon" sizes="196x196" href="http://ocnvj4kt8.bkt.clouddn.com/pano/textures/logo.png">
+    <link rel="apple-touch-icon" href="http://ocnvj4kt8.bkt.clouddn.com/pano/textures/logo.png">
 </head>
 
 <body>
 
     <div id="welcome">
         <div class="centered">
-            <h1 style="max-width: 100%; font-size:40px; color:white">VR看房</h1>
+            <h1 style="max-width: 100%; font-size:40px; color:white" id="loading_bar">VR看房</h1>
             <h2 id="loading_tip" style="padding-bottom: 10px; font-size:15px; color:white; line-height:1.4">准备中，请稍等...</h2>
             <div class="progress">
                 <div id="loading_progress_bar" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0"
@@ -40,8 +40,8 @@
     </div>
 
     <script>
-        var domain = './house/';
-        var houseId = '22544f76-25cf-42db-aa44-53f309567dcf';
+        var domain = 'http://ocnvj4kt8.bkt.clouddn.com/';
+        var houseId = 'pano';
 
         var url = domain + houseId + "/CoverImage/Cover.jpg";
 
@@ -57,7 +57,7 @@
     </script>
 
     <div id="thumbnail-controller" class="row navbar navbar-fixed-bottom">
-        <img id="thumbnail-control-button" src="src/textures/thumbnail.png" class="img-opacity controller">
+        <img id="thumbnail-control-button" src="http://ocnvj4kt8.bkt.clouddn.com/pano/textures/thumbnail.png" class="img-opacity controller">
         <div id="thumbnail-list" class="row row-horizon background-trans" align="center" style="display: none">
             <div id="thumbnail" class="col-xs-3 col-sm-1 col-md-1">
                 <div class="thumbnail-unselected text-center">
@@ -79,7 +79,7 @@
         </div>
 
         <div id="switchToHotSpotViewDiv">
-            <img src="src/textures/fullScreenExit.png" class="img-opacity controller">
+            <img src="http://ocnvj4kt8.bkt.clouddn.com/pano/textures/fullScreenExit.png" class="img-opacity controller">
         </div>
 
         <div id="controlTip" class="loading-trans radius-div centered">
@@ -96,37 +96,37 @@
         </div>
 
         <div id="switchToOverviewDiv">
-            <img src="src/textures/back.png" class="img-opacity controller">
+            <img src="http://ocnvj4kt8.bkt.clouddn.com/pano/textures/back.png" class="img-opacity controller">
         </div>
 
         <div id="controlDiv">
-            <img id="switchVRButton" src="src/textures/vr.png" class="img-opacity controller">
+            <img id="switchVRButton" src="http://ocnvj4kt8.bkt.clouddn.com/pano/textures/vr.png" class="img-opacity controller">
         </div>
 
         <div id="zoomInDiv">
-            <img src="src/textures/zoomIn.png" class="img-opacity controller">
+            <img src="http://ocnvj4kt8.bkt.clouddn.com/pano/textures/zoomIn.png" class="img-opacity controller">
         </div>
 
         <div id="zoomOutDiv">
-            <img src="src/textures/zoomOut.png" class="img-opacity controller">
+            <img src="http://ocnvj4kt8.bkt.clouddn.com/pano/textures/zoomOut.png" class="img-opacity controller">
         </div>
     </div>
 
     <div id="vr_house_container"></div>
 
     <!--three.js-->
-    <script src="lib/threejs/three.min.js"></script>
-    <script src="lib/threejs/OrbitControls.js"></script>
+    <!-- <script src="lib/threejs/three.min.js"></script> -->
+    <!-- <script src="lib/threejs/OrbitControls.js"></script> -->
 
     <!--<script src="lib/threejs/stats.min.js"></script>-->
 
 
     <!--Web VR-->
-    <script src="lib/vr/PhoneVR.js"></script>
+    <!-- <script src="lib/vr/PhoneVR.js"></script> -->
 
-    <script src="lib/vr/VRControls.js"></script>
+    <!-- <script src="lib/vr/VRControls.js"></script> -->
 
-    <script src="lib/vr/VREffect.js"></script>
+    <!-- <script src="lib/vr/VREffect.js"></script> -->
 
     <!--core-->
     <!-- <script src="src/js/core/PanoramaControls.js"></script> -->

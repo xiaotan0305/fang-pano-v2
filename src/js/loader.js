@@ -30,12 +30,11 @@ var getBrowser = function () {
 /**
  * 加载script标签
  * @param url
- * @param callback
  */
-var loadJavaScript = function (url, callback) {
+var loadJavaScript = function (url) {
     var script = document.createElement('script');
     script.src = url;
-    callback = callback || function () { };
+    script.async = false;
     if (navigator.userAgent.indexOf('MSIE') > 0) {
         script.onreadystatechange = function () {
             if (this.readyState === 'loaded' || this.readyState === 'complete') {
@@ -46,9 +45,8 @@ var loadJavaScript = function (url, callback) {
         };
     } else {
         script.onload = function () {
-            callback();
-            this.onload = this.onreadystatechange = null;
-            this.parentNode.removeChild(this);
+            // this.onload = this.onreadystatechange = null;
+            // this.parentNode.removeChild(this);
         };
     }
     document.getElementsByTagName('head')[0].appendChild(script);
@@ -57,18 +55,18 @@ var loadJavaScript = function (url, callback) {
 /**
  * 加载script标签
  * @param urlArr
- * @param callback
  */
-var loadJavaScripts = function (urlArr, callback) {
-    var n = 0;
-    var loadedFn = function () {
-        if (++n === urlArr.length) {
-            callback && callback();
-        } else {
-            loadJavaScript(urlArr[n], loadedFn);
-        }
-    };
-    loadJavaScript(urlArr[n], loadedFn);
+var loadJavaScripts = function (urlArr) {
+    // var loadedFn = function () {
+    //     if (++n === urlArr.length) {
+    //         callback && callback();
+    //     } else {
+    //         loadJavaScript(urlArr[n], loadedFn);
+    //     }
+    // };
+    for (let i = 0; i < urlArr.length; i++) {
+        loadJavaScript(urlArr[i]);
+    }
 };
 
 /**
@@ -76,7 +74,15 @@ var loadJavaScripts = function (urlArr, callback) {
  */
 window.onload = function () {
     if (isWebGLSupport()) {
-        var arr = ['lib/jquery/jquery.min.js', 'lib/threejs/three.min.js', 'dist/pano.min.js'];
+        var arr = [
+            'lib/jquery/jquery.min.js',
+            'lib/threejs/three.min.js',
+            'lib/threejs/OrbitControls.js',
+            'lib/vr/PhoneVR.js',
+            'lib/vr/VRControls.js',
+            'lib/vr/VREffect.js',
+            'dist/pano.min.js'
+        ];
         loadJavaScripts(arr);
     } else {
         document.getElementById('loading_bar').style.visibility = 'hidden';
