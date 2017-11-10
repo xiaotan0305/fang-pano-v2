@@ -1,0 +1,1642 @@
+{
+    "Rooms": [
+        {
+            "ID": "CbTLZZCQ",
+            "Name": "客厅",
+            "Position": {
+                "x": 185.68942260742188,
+                "y": 0.05000000074505806,
+                "z": -5.292167663574219
+            },
+            "Rotation": 310.8947448730469,
+            "RoomFaces": [
+                {
+                    "Name": "客厅_face_0",
+                    "Position": {
+                        "x": 45.24440002441406,
+                        "y": -8.694847106933594,
+                        "z": 113.10381317138672
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 310.76324462890625,
+                        "z": 0
+                    },
+                    "Width": 45.6732,
+                    "Height": 142.6103,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_face_0.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "客厅_face_1",
+                    "Position": {
+                        "x": 78.08075714111328,
+                        "y": -8.694847106933594,
+                        "z": 111.25990295410156
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 40.76323318481445,
+                        "z": 0
+                    },
+                    "Width": 47.3335,
+                    "Height": 142.6103,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_face_1.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "客厅_face_2",
+                    "Position": {
+                        "x": 140.41683959960938,
+                        "y": -8.694847106933594,
+                        "z": 75.19588470458984
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 310.76324462890625,
+                        "z": 0
+                    },
+                    "Width": 136.0336,
+                    "Height": 142.6103,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_face_2.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "客厅_face_3",
+                    "Position": {
+                        "x": 166.90182495117188,
+                        "y": -8.694847106933594,
+                        "z": 8.226179122924805
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 220.7632293701172,
+                        "z": 0
+                    },
+                    "Width": 47.3335,
+                    "Height": 142.6103,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_face_3.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "客厅_face_4",
+                    "Position": {
+                        "x": 149.0302276611328,
+                        "y": -8.694847106933594,
+                        "z": -7.289258003234863
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 310.7607421875,
+                        "z": 0
+                    },
+                    "Width": 0.1653,
+                    "Height": 142.6103,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_face_4.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "客厅_face_5",
+                    "Position": {
+                        "x": 51.80023193359375,
+                        "y": -8.694847106933594,
+                        "z": -91.21627044677734
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 220.76324462890625,
+                        "z": 0
+                    },
+                    "Width": 256.8845,
+                    "Height": 142.6103,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_face_5.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "客厅_face_6",
+                    "Position": {
+                        "x": -56.40630340576172,
+                        "y": -8.694847106933594,
+                        "z": -162.4103240966797
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 130.7632293701172,
+                        "z": 0
+                    },
+                    "Width": 33.4569,
+                    "Height": 142.6103,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_face_6.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "客厅_face_8",
+                    "Position": {
+                        "x": -152.5874786376953,
+                        "y": -8.694847106933594,
+                        "z": -50.838584899902344
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 130.76324462890625,
+                        "z": 0
+                    },
+                    "Width": 35.6754,
+                    "Height": 142.6103,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_face_8.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "客厅_face_9",
+                    "Position": {
+                        "x": -88.02342987060547,
+                        "y": -8.694847106933594,
+                        "z": 28.370088577270508
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 40.763206481933594,
+                        "z": 0
+                    },
+                    "Width": 201.2397,
+                    "Height": 142.6103,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_face_9.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "客厅_face_10",
+                    "Position": {
+                        "x": -18.53354263305664,
+                        "y": -8.694847106933594,
+                        "z": 101.86473083496094
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 130.76318359375,
+                        "z": 0
+                    },
+                    "Width": 20.5871,
+                    "Height": 142.6103,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_face_10.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "客厅_face_11",
+                    "Position": {
+                        "x": -25.19829559326172,
+                        "y": -8.694847106933594,
+                        "z": 109.70974731445312
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 40.76227951049805,
+                        "z": 0
+                    },
+                    "Width": 0.1486,
+                    "Height": 142.6103,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_face_11.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "客厅_face_13",
+                    "Position": {
+                        "x": 16.250911712646484,
+                        "y": -8.694847106933594,
+                        "z": 145.4413299560547
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 40.76390075683594,
+                        "z": 0
+                    },
+                    "Width": 0.6635,
+                    "Height": 142.6103,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_face_13.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "客厅_face_14",
+                    "Position": {
+                        "x": 23.223209381103516,
+                        "y": -8.694847106933594,
+                        "z": 137.86143493652344
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 310.76318359375,
+                        "z": 0
+                    },
+                    "Width": 20.5872,
+                    "Height": 142.6103,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_face_14.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "客厅_face_15",
+                    "Position": {
+                        "x": 30.138914108276367,
+                        "y": -8.694847106933594,
+                        "z": 130.23275756835938
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 40.7639045715332,
+                        "z": 0
+                    },
+                    "Width": 0.5141,
+                    "Height": 142.6103,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_face_15.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "客厅_up",
+                    "Position": {
+                        "x": 10.2965087890625,
+                        "y": 62.61030578613281,
+                        "z": -14.711372375488281
+                    },
+                    "Rotation": {
+                        "x": 270,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 349.0617,
+                    "Height": 320.7386,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_up.png",
+                    "IsTransparent": true
+                },
+                {
+                    "Name": "客厅_down",
+                    "Position": {
+                        "x": 10.2965087890625,
+                        "y": -80,
+                        "z": -14.711372375488281
+                    },
+                    "Rotation": {
+                        "x": 90,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 349.0617,
+                    "Height": 320.7386,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/客厅_down.png",
+                    "IsTransparent": true
+                }
+            ],
+            "HotSpotNames": [
+                "客厅-1"
+            ]
+        },
+        {
+            "ID": "F9uLLeQZ",
+            "Name": "过道",
+            "Position": {
+                "x": -102.53164672851562,
+                "y": 0,
+                "z": 75.03431701660156
+            },
+            "Rotation": 87.4000015258789,
+            "RoomFaces": [
+                {
+                    "Name": "过道_face_0",
+                    "Position": {
+                        "x": -17.907997131347656,
+                        "y": -12.701797485351562,
+                        "z": 189.92532348632812
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 90,
+                        "z": 0
+                    },
+                    "Width": 0,
+                    "Height": 134.5964,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/过道_face_0.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "过道_face_2",
+                    "Position": {
+                        "x": 35.888980865478516,
+                        "y": -12.701797485351562,
+                        "z": 187.358642578125
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 357.26702880859375,
+                        "z": 0
+                    },
+                    "Width": 0.4279,
+                    "Height": 134.5964,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/过道_face_2.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "过道_face_3",
+                    "Position": {
+                        "x": 34.07762908935547,
+                        "y": -12.701797485351562,
+                        "z": 144.90484619140625
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 267.2684326171875,
+                        "z": 0
+                    },
+                    "Width": 84.9837,
+                    "Height": 134.5964,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/过道_face_3.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "过道_face_5",
+                    "Position": {
+                        "x": 29.404552459716797,
+                        "y": -12.701797485351562,
+                        "z": 46.96000289916992
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 267.2684020996094,
+                        "z": 0
+                    },
+                    "Width": 31.5792,
+                    "Height": 134.5964,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/过道_face_5.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "过道_face_7",
+                    "Position": {
+                        "x": 26.065406799316406,
+                        "y": -12.701797485351562,
+                        "z": -23.026432037353516
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 267.2684020996094,
+                        "z": 0
+                    },
+                    "Width": 10.9746,
+                    "Height": 134.5964,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/过道_face_7.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "过道_face_8",
+                    "Position": {
+                        "x": 23.24414825439453,
+                        "y": -12.701797485351562,
+                        "z": -28.38535499572754
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 177.26853942871094,
+                        "z": 0
+                    },
+                    "Width": 5.1253,
+                    "Height": 134.5964,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/过道_face_8.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "过道_face_10",
+                    "Position": {
+                        "x": -26.37396240234375,
+                        "y": -12.701797485351562,
+                        "z": -26.01800537109375
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 177.2685089111328,
+                        "z": 0
+                    },
+                    "Width": 3.6694,
+                    "Height": 134.5964,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/过道_face_10.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "过道_face_11",
+                    "Position": {
+                        "x": -27.99454116821289,
+                        "y": -12.701797485351562,
+                        "z": -21.486278533935547
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 87.2684555053711,
+                        "z": 0
+                    },
+                    "Width": 8.8987,
+                    "Height": 134.5964,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/过道_face_11.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "过道_face_13",
+                    "Position": {
+                        "x": -24.208494186401367,
+                        "y": -12.701797485351562,
+                        "z": 57.86833953857422
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 87.26846313476562,
+                        "z": 0
+                    },
+                    "Width": 81.6368,
+                    "Height": 134.5964,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/过道_face_13.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "过道_face_15",
+                    "Position": {
+                        "x": -17.914575576782227,
+                        "y": -12.701797485351562,
+                        "z": 189.78744506835938
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 87.2685317993164,
+                        "z": 0
+                    },
+                    "Width": 0.2761,
+                    "Height": 134.5964,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/过道_face_15.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "过道_up",
+                    "Position": {
+                        "x": 3.9480438232421875,
+                        "y": 54.596405029296875,
+                        "z": 80.70892333984375
+                    },
+                    "Rotation": {
+                        "x": 270,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 64.3092,
+                    "Height": 218.4328,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/过道_up.png",
+                    "IsTransparent": true
+                },
+                {
+                    "Name": "过道_down",
+                    "Position": {
+                        "x": 3.9480438232421875,
+                        "y": -80,
+                        "z": 80.70892333984375
+                    },
+                    "Rotation": {
+                        "x": 90,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 64.3092,
+                    "Height": 218.4328,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/过道_down.png",
+                    "IsTransparent": true
+                }
+            ],
+            "HotSpotNames": [
+                "过道-1"
+            ]
+        },
+        {
+            "ID": "jY1vcUUf",
+            "Name": "厨房",
+            "Position": {
+                "x": 13.452682495117188,
+                "y": 0.30000001192092896,
+                "z": 128.73007202148438
+            },
+            "Rotation": 37.830257415771484,
+            "RoomFaces": [
+                {
+                    "Name": "厨房_face_0",
+                    "Position": {
+                        "x": 71.6437759399414,
+                        "y": -8.072898864746094,
+                        "z": 89.94671630859375
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 307.69879150390625,
+                        "z": 0
+                    },
+                    "Width": 108.7629,
+                    "Height": 143.8542,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/厨房_face_0.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "厨房_face_1",
+                    "Position": {
+                        "x": 90.24647521972656,
+                        "y": -8.072898864746094,
+                        "z": 35.59418869018555
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 217.69869995117188,
+                        "z": 0
+                    },
+                    "Width": 37.036,
+                    "Height": 143.8542,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/厨房_face_1.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "厨房_face_3",
+                    "Position": {
+                        "x": -17.190858840942383,
+                        "y": -8.072898864746094,
+                        "z": -47.438968658447266
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 217.69873046875,
+                        "z": 0
+                    },
+                    "Width": 44.5653,
+                    "Height": 143.8542,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/厨房_face_3.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "厨房_face_4",
+                    "Position": {
+                        "x": -68.07653045654297,
+                        "y": -8.072898864746094,
+                        "z": -18.036399841308594
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 127.69879150390625,
+                        "z": 0
+                    },
+                    "Width": 108.7629,
+                    "Height": 143.8542,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/厨房_face_4.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "厨房_face_5",
+                    "Position": {
+                        "x": -31.47120475769043,
+                        "y": -8.072898864746094,
+                        "z": 78.98375701904297
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 37.69871139526367,
+                        "z": 0
+                    },
+                    "Width": 176.5846,
+                    "Height": 143.8542,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/厨房_face_5.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "厨房_up",
+                    "Position": {
+                        "x": 1.7836227416992188,
+                        "y": 63.85420227050781,
+                        "z": 35.95515441894531
+                    },
+                    "Rotation": {
+                        "x": 270,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 206.23,
+                    "Height": 194.0403,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/厨房_up.png",
+                    "IsTransparent": true
+                },
+                {
+                    "Name": "厨房_down",
+                    "Position": {
+                        "x": 1.7836227416992188,
+                        "y": -80,
+                        "z": 35.95515441894531
+                    },
+                    "Rotation": {
+                        "x": 90,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 206.23,
+                    "Height": 194.0403,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/厨房_down.png",
+                    "IsTransparent": true
+                }
+            ],
+            "HotSpotNames": [
+                "厨房-1"
+            ]
+        },
+        {
+            "ID": "xos8rudK",
+            "Name": "儿童房",
+            "Position": {
+                "x": -8.733078002929688,
+                "y": 0.15000000596046448,
+                "z": -52.823150634765625
+            },
+            "Rotation": 49.65315246582031,
+            "RoomFaces": [
+                {
+                    "Name": "儿童房_face_0",
+                    "Position": {
+                        "x": 75.72171783447266,
+                        "y": -7.314399719238281,
+                        "z": 86.0694808959961
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 319.52154541015625,
+                        "z": 0
+                    },
+                    "Width": 204.4664,
+                    "Height": 145.3712,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/儿童房_face_0.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "儿童房_face_1",
+                    "Position": {
+                        "x": 101.98992156982422,
+                        "y": -7.314399719238281,
+                        "z": -40.63589859008789
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 229.5215606689453,
+                        "z": 0
+                    },
+                    "Width": 158.6523,
+                    "Height": 145.3712,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/儿童房_face_1.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "儿童房_face_2",
+                    "Position": {
+                        "x": -27.26934814453125,
+                        "y": -7.314399719238281,
+                        "z": -34.60943603515625
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 139.5215606689453,
+                        "z": 0
+                    },
+                    "Width": 204.4665,
+                    "Height": 145.3712,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/儿童房_face_2.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "儿童房_face_3",
+                    "Position": {
+                        "x": -102.50062561035156,
+                        "y": -7.314399719238281,
+                        "z": 34.7238883972168
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 49.52143096923828,
+                        "z": 0
+                    },
+                    "Width": 7.8022,
+                    "Height": 145.3712,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/儿童房_face_3.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "儿童房_face_5",
+                    "Position": {
+                        "x": -34.04987716674805,
+                        "y": -7.314399719238281,
+                        "z": 114.93047332763672
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 49.52153015136719,
+                        "z": 0
+                    },
+                    "Width": 98.6128,
+                    "Height": 145.3712,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/儿童房_face_5.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "儿童房_up",
+                    "Position": {
+                        "x": 24.226173400878906,
+                        "y": 65.37120056152344,
+                        "z": 25.730010986328125
+                    },
+                    "Rotation": {
+                        "x": 270,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 258.5186,
+                    "Height": 253.4108,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/儿童房_up.png",
+                    "IsTransparent": true
+                },
+                {
+                    "Name": "儿童房_down",
+                    "Position": {
+                        "x": 24.226173400878906,
+                        "y": -80,
+                        "z": 25.730010986328125
+                    },
+                    "Rotation": {
+                        "x": 90,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 258.5186,
+                    "Height": 253.4108,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/儿童房_down.png",
+                    "IsTransparent": true
+                }
+            ],
+            "HotSpotNames": [
+                "儿童房-1"
+            ]
+        },
+        {
+            "ID": "hzCa6gG9",
+            "Name": "书房",
+            "Position": {
+                "x": -227.790283203125,
+                "y": 0.10000000149011612,
+                "z": 76.7234878540039
+            },
+            "Rotation": 108.49716186523438,
+            "RoomFaces": [
+                {
+                    "Name": "书房_face_0",
+                    "Position": {
+                        "x": -91.80009460449219,
+                        "y": -10.49835205078125,
+                        "z": 20.76136589050293
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 18.365554809570312,
+                        "z": 0
+                    },
+                    "Width": 107.3191,
+                    "Height": 139.0033,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/书房_face_0.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "书房_face_1",
+                    "Position": {
+                        "x": -48.65433120727539,
+                        "y": -10.49835205078125,
+                        "z": 61.104881286621094
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 108.36556243896484,
+                        "z": 0
+                    },
+                    "Width": 49.3887,
+                    "Height": 139.0033,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/书房_face_1.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "书房_face_2",
+                    "Position": {
+                        "x": -56.39593505859375,
+                        "y": -10.49835205078125,
+                        "z": 84.55439758300781
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 18.36608123779297,
+                        "z": 0
+                    },
+                    "Width": 0.0823,
+                    "Height": 139.0033,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/书房_face_2.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "书房_face_4",
+                    "Position": {
+                        "x": -3.9461727142333984,
+                        "y": -10.49835205078125,
+                        "z": 101.96710205078125
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 90,
+                        "z": 0
+                    },
+                    "Width": 0,
+                    "Height": 139.0033,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/书房_face_4.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "书房_face_5",
+                    "Position": {
+                        "x": 3.834493637084961,
+                        "y": -10.49835205078125,
+                        "z": 78.53055572509766
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 288.3656005859375,
+                        "z": 0
+                    },
+                    "Width": 49.3887,
+                    "Height": 139.0033,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/书房_face_5.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "书房_face_6",
+                    "Position": {
+                        "x": 11.644330978393555,
+                        "y": -10.49835205078125,
+                        "z": 55.10369110107422
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 18.367767333984375,
+                        "z": 0
+                    },
+                    "Width": 0.0615,
+                    "Height": 139.0033,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/书房_face_6.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "书房_face_7",
+                    "Position": {
+                        "x": 32.11857986450195,
+                        "y": -10.49835205078125,
+                        "z": -6.470373153686523
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 288.36553955078125,
+                        "z": 0
+                    },
+                    "Width": 129.7776,
+                    "Height": 139.0033,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/书房_face_7.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "书房_face_8",
+                    "Position": {
+                        "x": -24.63637351989746,
+                        "y": -10.49835205078125,
+                        "z": -93.68359375
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 198.36553955078125,
+                        "z": 0
+                    },
+                    "Width": 162.6864,
+                    "Height": 139.0033,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/书房_face_8.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "书房_face_9",
+                    "Position": {
+                        "x": -122.28146362304688,
+                        "y": -10.49835205078125,
+                        "z": -57.729339599609375
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 108.36553955078125,
+                        "z": 0
+                    },
+                    "Width": 129.7776,
+                    "Height": 139.0033,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/书房_face_9.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "书房_up",
+                    "Position": {
+                        "x": -45.08142852783203,
+                        "y": 59.0032958984375,
+                        "z": -8.672985076904297
+                    },
+                    "Rotation": {
+                        "x": 270,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 195.2902,
+                    "Height": 221.2802,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/书房_up.png",
+                    "IsTransparent": true
+                },
+                {
+                    "Name": "书房_down",
+                    "Position": {
+                        "x": -45.08142852783203,
+                        "y": -80,
+                        "z": -8.672985076904297
+                    },
+                    "Rotation": {
+                        "x": 90,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 195.2902,
+                    "Height": 221.2802,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/书房_down.png",
+                    "IsTransparent": true
+                }
+            ],
+            "HotSpotNames": [
+                "书房-1"
+            ]
+        },
+        {
+            "ID": "cz3z4wQq",
+            "Name": "卫生间",
+            "Position": {
+                "x": -102.64008331298828,
+                "y": 0.25,
+                "z": 142.80667114257812
+            },
+            "Rotation": 77.54006958007812,
+            "RoomFaces": [
+                {
+                    "Name": "卫生间_face_0",
+                    "Position": {
+                        "x": 0.579010009765625,
+                        "y": -9.713249206542969,
+                        "z": 49.22465515136719
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 347.4085388183594,
+                        "z": 0
+                    },
+                    "Width": 101.9979,
+                    "Height": 140.5735,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/卫生间_face_0.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "卫生间_face_1",
+                    "Position": {
+                        "x": 47.421356201171875,
+                        "y": -9.713249206542969,
+                        "z": 24.989620208740234
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 257.4085388183594,
+                        "z": 0
+                    },
+                    "Width": 26.8813,
+                    "Height": 140.5735,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/卫生间_face_1.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "卫生间_face_3",
+                    "Position": {
+                        "x": 34.46568298339844,
+                        "y": -9.713249206542969,
+                        "z": -33.01123809814453
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 257.4083251953125,
+                        "z": 0
+                    },
+                    "Width": 2.8601,
+                    "Height": 140.5735,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/卫生间_face_3.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "卫生间_face_4",
+                    "Position": {
+                        "x": 34.13534164428711,
+                        "y": -9.713249206542969,
+                        "z": -34.40271759033203
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 167.38284301757812,
+                        "z": 0
+                    },
+                    "Width": 0.0381,
+                    "Height": 140.5735,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/卫生间_face_4.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "卫生间_face_5",
+                    "Position": {
+                        "x": 28.976268768310547,
+                        "y": -9.713249206542969,
+                        "z": -57.41185760498047
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 257.4085388183594,
+                        "z": 0
+                    },
+                    "Width": 47.1609,
+                    "Height": 140.5735,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/卫生间_face_5.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "卫生间_face_6",
+                    "Position": {
+                        "x": -16.323036193847656,
+                        "y": -9.713249206542969,
+                        "z": -71.45488739013672
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 167.40855407714844,
+                        "z": 0
+                    },
+                    "Width": 82.297,
+                    "Height": 140.5735,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/卫生间_face_6.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "卫生间_face_7",
+                    "Position": {
+                        "x": -51.34138488769531,
+                        "y": -9.713249206542969,
+                        "z": -39.4713249206543
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 77.40855407714844,
+                        "z": 0
+                    },
+                    "Width": 47.1608,
+                    "Height": 140.5735,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/卫生间_face_7.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "卫生间_face_8",
+                    "Position": {
+                        "x": -55.79585266113281,
+                        "y": -9.713249206542969,
+                        "z": -14.314796447753906
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 167.40850830078125,
+                        "z": 0
+                    },
+                    "Width": 19.6628,
+                    "Height": 140.5735,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/卫生间_face_8.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "卫生间_face_9",
+                    "Position": {
+                        "x": -57.29207992553711,
+                        "y": -9.713249206542969,
+                        "z": 24.085378646850586
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 77.40853881835938,
+                        "z": 0
+                    },
+                    "Width": 74.3009,
+                    "Height": 140.5735,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/卫生间_face_9.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "卫生间_up",
+                    "Position": {
+                        "x": -7.519702911376953,
+                        "y": 60.57350158691406,
+                        "z": -10.04141616821289
+                    },
+                    "Rotation": {
+                        "x": 270,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 115.7422,
+                    "Height": 140.7675,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/卫生间_up.png",
+                    "IsTransparent": true
+                },
+                {
+                    "Name": "卫生间_down",
+                    "Position": {
+                        "x": -7.519702911376953,
+                        "y": -80,
+                        "z": -10.04141616821289
+                    },
+                    "Rotation": {
+                        "x": 90,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 115.7422,
+                    "Height": 140.7675,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/卫生间_down.png",
+                    "IsTransparent": true
+                }
+            ],
+            "HotSpotNames": [
+                "卫生间-1"
+            ]
+        },
+        {
+            "ID": "BzWEBHgn",
+            "Name": "阳台",
+            "Position": {
+                "x": 225.23565673828125,
+                "y": 0.10000000149011612,
+                "z": -189.8534698486328
+            },
+            "Rotation": 314.38385009765625,
+            "RoomFaces": [
+                {
+                    "Name": "阳台_face_0",
+                    "Position": {
+                        "x": -44.737342834472656,
+                        "y": 0.7265472412109375,
+                        "z": 97.08535766601562
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 314.2522888183594,
+                        "z": 0
+                    },
+                    "Width": 39.1592,
+                    "Height": 161.4531,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/阳台_face_0.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "阳台_face_2",
+                    "Position": {
+                        "x": 57.43688201904297,
+                        "y": 0.7265472412109375,
+                        "z": -7.791019439697266
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 314.2522888183594,
+                        "z": 0
+                    },
+                    "Width": 36.5082,
+                    "Height": 161.4531,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/阳台_face_2.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "阳台_face_3",
+                    "Position": {
+                        "x": 42.33749008178711,
+                        "y": 0.7265472412109375,
+                        "z": -47.98606872558594
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 224.25218200683594,
+                        "z": 0
+                    },
+                    "Width": 77.7283,
+                    "Height": 161.4531,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/阳台_face_3.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "阳台_face_4",
+                    "Position": {
+                        "x": -49.78742980957031,
+                        "y": 0.7265472412109375,
+                        "z": -9.118263244628906
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 134.25218200683594,
+                        "z": 0
+                    },
+                    "Width": 184.2529,
+                    "Height": 161.4531,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/阳台_face_4.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "阳台_face_5",
+                    "Position": {
+                        "x": -86.23762512207031,
+                        "y": 0.7265472412109375,
+                        "z": 83.98968505859375
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 44.25228500366211,
+                        "z": 0
+                    },
+                    "Width": 77.728,
+                    "Height": 161.4531,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/阳台_face_5.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "阳台_up",
+                    "Position": {
+                        "x": -21.94997787475586,
+                        "y": 81.45309448242188,
+                        "z": 18.00177001953125
+                    },
+                    "Rotation": {
+                        "x": 270,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 184.2498,
+                    "Height": 186.2159,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/阳台_up.png",
+                    "IsTransparent": true
+                },
+                {
+                    "Name": "阳台_down",
+                    "Position": {
+                        "x": -21.94997787475586,
+                        "y": -80,
+                        "z": 18.00177001953125
+                    },
+                    "Rotation": {
+                        "x": 90,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 184.2498,
+                    "Height": 186.2159,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/阳台_down.png",
+                    "IsTransparent": true
+                }
+            ],
+            "HotSpotNames": [
+                "阳台-1"
+            ]
+        },
+        {
+            "ID": "0j9ZuTBy",
+            "Name": "主卧",
+            "Position": {
+                "x": -83.09135437011719,
+                "y": 0.20000000298023224,
+                "z": -41.850189208984375
+            },
+            "Rotation": 31.285661697387695,
+            "RoomFaces": [
+                {
+                    "Name": "主卧_face_0",
+                    "Position": {
+                        "x": -126.66658020019531,
+                        "y": -9.646896362304688,
+                        "z": 28.2509708404541
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 31.154041290283203,
+                        "z": 0
+                    },
+                    "Width": 108.496,
+                    "Height": 140.7062,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/主卧_face_0.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "主卧_face_2",
+                    "Position": {
+                        "x": -27.55956268310547,
+                        "y": -9.646896362304688,
+                        "z": 88.16372680664062
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 31.15404510498047,
+                        "z": 0
+                    },
+                    "Width": 11.3207,
+                    "Height": 140.7062,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/主卧_face_2.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "主卧_face_3",
+                    "Position": {
+                        "x": 30.63335418701172,
+                        "y": -9.646896362304688,
+                        "z": 2.8428573608398438
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 301.154052734375,
+                        "z": 0
+                    },
+                    "Width": 206.2428,
+                    "Height": 140.7062,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/主卧_face_3.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "主卧_face_4",
+                    "Position": {
+                        "x": 8.794597625732422,
+                        "y": -9.646896362304688,
+                        "z": -130.85922241210938
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 211.154052734375,
+                        "z": 0
+                    },
+                    "Width": 175.7174,
+                    "Height": 140.7062,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/主卧_face_4.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "主卧_face_5",
+                    "Position": {
+                        "x": -119.74199676513672,
+                        "y": -9.646896362304688,
+                        "z": -88.06291961669922
+                    },
+                    "Rotation": {
+                        "x": 180,
+                        "y": 121.15404510498047,
+                        "z": 0
+                    },
+                    "Width": 206.2428,
+                    "Height": 140.7062,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/主卧_face_5.png",
+                    "IsTransparent": false
+                },
+                {
+                    "Name": "主卧_up",
+                    "Position": {
+                        "x": -44.554317474365234,
+                        "y": 60.706207275390625,
+                        "z": -42.61002731323242
+                    },
+                    "Rotation": {
+                        "x": 270,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 257.0732,
+                    "Height": 267.4041,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/主卧_up.png",
+                    "IsTransparent": true
+                },
+                {
+                    "Name": "主卧_down",
+                    "Position": {
+                        "x": -44.554317474365234,
+                        "y": -80,
+                        "z": -42.61002731323242
+                    },
+                    "Rotation": {
+                        "x": 90,
+                        "y": 0,
+                        "z": 0
+                    },
+                    "Width": 257.0732,
+                    "Height": 267.4041,
+                    "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/RoomFaces/主卧_down.png",
+                    "IsTransparent": true
+                }
+            ],
+            "HotSpotNames": [
+                "主卧-1"
+            ]
+        }
+    ],
+    "HotSpots": [
+        {
+            "ID": "hZxt6iQi",
+            "Name": "客厅-1",
+            "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/PanoramaImages/客厅.jpg",
+            "Position": {
+                "x": 185.68942260742188,
+                "y": 0.05000000074505806,
+                "z": -5.292167663574219
+            },
+            "VisibleHotSpots": [
+                "过道-1",
+                "阳台-1",
+                "客厅-1",
+                "厨房-1",
+                "儿童房-1"
+            ],
+            "Rotation": {
+                "x": 0,
+                "y": 310.8947448730469,
+                "z": 0
+            },
+            "Type": "Room"
+        },
+        {
+            "ID": "MRVUgQDs",
+            "Name": "过道-1",
+            "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/PanoramaImages/过道.jpg",
+            "Position": {
+                "x": -102.53164672851562,
+                "y": 0,
+                "z": 75.03431701660156
+            },
+            "VisibleHotSpots": [
+                "客厅-1",
+                "书房-1",
+                "儿童房-1",
+                "主卧-1",
+                "卫生间-1",
+                "厨房-1",
+                "过道-1"
+            ],
+            "Rotation": {
+                "x": 0,
+                "y": 87.4000015258789,
+                "z": 0
+            },
+            "Type": "Room"
+        },
+        {
+            "ID": "JvE1yLXT",
+            "Name": "厨房-1",
+            "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/PanoramaImages/厨房.jpg",
+            "Position": {
+                "x": 13.452682495117188,
+                "y": 0.30000001192092896,
+                "z": 128.73007202148438
+            },
+            "VisibleHotSpots": [
+                "客厅-1",
+                "过道-1",
+                "厨房-1",
+                "儿童房-1",
+                "书房-1",
+                "卫生间-1",
+                "主卧-1"
+            ],
+            "Rotation": {
+                "x": 0,
+                "y": 37.830257415771484,
+                "z": 0
+            },
+            "Type": "Room"
+        },
+        {
+            "ID": "w7MitPyJ",
+            "Name": "儿童房-1",
+            "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/PanoramaImages/儿童房.jpg",
+            "Position": {
+                "x": -8.733078002929688,
+                "y": 0.15000000596046448,
+                "z": -52.823150634765625
+            },
+            "VisibleHotSpots": [
+                "客厅-1",
+                "过道-1",
+                "厨房-1",
+                "儿童房-1",
+                "卫生间-1",
+                "主卧-1"
+            ],
+            "Rotation": {
+                "x": 0,
+                "y": 49.65315246582031,
+                "z": 0
+            },
+            "Type": "Room"
+        },
+        {
+            "ID": "oTV7wW6h",
+            "Name": "书房-1",
+            "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/PanoramaImages/书房.jpg",
+            "Position": {
+                "x": -227.790283203125,
+                "y": 0.10000000149011612,
+                "z": 76.7234878540039
+            },
+            "VisibleHotSpots": [
+                "过道-1",
+                "厨房-1",
+                "书房-1",
+                "卫生间-1",
+                "主卧-1"
+            ],
+            "Rotation": {
+                "x": 0,
+                "y": 108.49716186523438,
+                "z": 0
+            },
+            "Type": "Room"
+        },
+        {
+            "ID": "XdUWgo8B",
+            "Name": "卫生间-1",
+            "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/PanoramaImages/卫生间.jpg",
+            "Position": {
+                "x": -102.64008331298828,
+                "y": 0.25,
+                "z": 142.80667114257812
+            },
+            "VisibleHotSpots": [
+                "过道-1",
+                "厨房-1",
+                "儿童房-1",
+                "书房-1",
+                "卫生间-1",
+                "主卧-1"
+            ],
+            "Rotation": {
+                "x": 0,
+                "y": 77.54006958007812,
+                "z": 0
+            },
+            "Type": "Room"
+        },
+        {
+            "ID": "3Tak3fIr",
+            "Name": "阳台-1",
+            "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/PanoramaImages/阳台.jpg",
+            "Position": {
+                "x": 225.23565673828125,
+                "y": 0.10000000149011612,
+                "z": -189.8534698486328
+            },
+            "VisibleHotSpots": [
+                "客厅-1",
+                "阳台-1"
+            ],
+            "Rotation": {
+                "x": 0,
+                "y": 314.38385009765625,
+                "z": 0
+            },
+            "Type": "Room"
+        },
+        {
+            "ID": "NgBHCJ2N",
+            "Name": "主卧-1",
+            "ImagePath": "./house/22544f76-25cf-42db-aa44-53f309567dcf/PanoramaImages/主卧.jpg",
+            "Position": {
+                "x": -83.09135437011719,
+                "y": 0.20000000298023224,
+                "z": -41.850189208984375
+            },
+            "VisibleHotSpots": [
+                "过道-1",
+                "厨房-1",
+                "儿童房-1",
+                "书房-1",
+                "卫生间-1",
+                "主卧-1"
+            ],
+            "Rotation": {
+                "x": 0,
+                "y": 31.285661697387695,
+                "z": 0
+            },
+            "Type": "Room"
+        }
+    ],
+    "Name": "融信铂爵89平",
+    "CameraHeight": 80
+}

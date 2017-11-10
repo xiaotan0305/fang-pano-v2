@@ -4,11 +4,10 @@
 
 const PanoramaControls = require('./panoCtrl.js');
 
-// var ossHost = "http://vrhouse.oss-cn-shanghai.aliyuncs.com/";
-// ossHost = "./house/22544f76-25cf-42db-aa44-53f309567dcf/";
-// var domain = "http://vrhouse.oss-cn-shanghai.aliyuncs.com/";
-var ossHost = './house/';
-var domain = './house/';
+var ossHost = "http://vrhouse.oss-cn-shanghai.aliyuncs.com/";
+ossHost = "./house/22544f76-25cf-42db-aa44-53f309567dcf/";
+var domain = "http://vrhouse.oss-cn-shanghai.aliyuncs.com/";
+domain = './house/';
 // domain = 'http://ocnvj4kt8.bkt.clouddn.com/'
 
 var stats, openStats = false;
@@ -386,31 +385,31 @@ function createHUDSprites(texture) {
     var hotSpotGroupScale = factor * 1.1;
     hotSpotGroup.scale.set(hotSpotGroupScale, hotSpotGroupScale, hotSpotGroupScale);
 
-    // var fullScreenTexture = textureLoader.load("./src/textures/fullScreen.png");
+    // var fullScreenTexture = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/fullScreen.png");
     // var fullScreenMaterial = new THREE.SpriteMaterial({map: fullScreenTexture});
     // fullScreen3DHouseButton = new THREE.Sprite(fullScreenMaterial);
     // fullScreen3DHouseButton.scale.set(25, 25, 1);
     // fullScreen3DHouseButton.visible = false;
     // register2DClickEvent(fullScreen3DHouseButton, onSwitchToOverviewClicked);
     // buttonGroup.add(fullScreen3DHouseButton);
-    textureLoader.load("./src/textures/button_Auto.png");
-    textureLoader.load("./src/textures/button_2D_pressed.png");
-    textureLoader.load("./src/textures/button_3D_pressed.png");
-    var switchAutoButtonTexture = textureLoader.load("./src/textures/button_Auto_pressed.png");
+    textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_Auto.png");
+    textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_2D_pressed.png");
+    textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_3D_pressed.png");
+    var switchAutoButtonTexture = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_Auto_pressed.png");
     var switchAutoButtonMaterial = new THREE.SpriteMaterial({ map: switchAutoButtonTexture });
     switchAutoButton = new THREE.Sprite(switchAutoButtonMaterial);
     switchAutoButton.scale.set(50, 25, 1);
     register2DClickEvent(switchAutoButton, onSwitchAutoButtonClicked);
     buttonGroup.add(switchAutoButton);
 
-    var switch2DButtonTexture = textureLoader.load("./src/textures/button_2D.png");
+    var switch2DButtonTexture = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_2D.png");
     var switch2DButtonMaterial = new THREE.SpriteMaterial({ map: switch2DButtonTexture });
     switch2DButton = new THREE.Sprite(switch2DButtonMaterial);
     switch2DButton.scale.set(40, 25, 1);
     register2DClickEvent(switch2DButton, onSwitch2DButtonClicked);
     buttonGroup.add(switch2DButton);
 
-    var switch3DButtonTexture = textureLoader.load("./src/textures/button_3D.png");
+    var switch3DButtonTexture = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_3D.png");
     var switch3DButtonMaterial = new THREE.SpriteMaterial({ map: switch3DButtonTexture });
     switch3DButton = new THREE.Sprite(switch3DButtonMaterial);
     switch3DButton.scale.set(40, 25, 1);
@@ -422,7 +421,7 @@ function createHUDSprites(texture) {
     // register2DClickEvent(switch2D3DButton, onSwitch2D3DButtonClicked);
     // buttonGroup.add(switch2D3DButton);
 
-    var sectorTexture = textureLoader.load("./src/textures/sector.png");
+    var sectorTexture = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/sector.png");
     var sectorMaterial = new THREE.SpriteMaterial({ map: sectorTexture });
     sectorSprite = new THREE.Sprite(sectorMaterial);
     sectorSprite.scale.set(100, 100, 1);
@@ -430,7 +429,7 @@ function createHUDSprites(texture) {
     hotSpotGroup.add(sectorSprite);
     lastSectorSpriteRotation = camera.rotation.y;
 
-    var hotSpotTexture = textureLoader.load("./src/textures/hotSpotPoint.png");
+    var hotSpotTexture = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/hotSpotPoint.png");
     var hotSpotMaterial = new THREE.SpriteMaterial({ map: hotSpotTexture });
     for (var index in allHotSpots) {
         var hotSpot = allHotSpots[index].tag;
@@ -457,7 +456,7 @@ function createHUDSprites(texture) {
     houseShapeSprite.visible = false;
     mapGroup.add(houseShapeSprite);
 
-    var bgTexture = textureLoader.load("./src/textures/bg.png", function () {
+    var bgTexture = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/bg.png", function () {
         sceneOrtho.visible = true;
         for (var roomIndex in house.Rooms) {
             var room = house.Rooms[roomIndex];
@@ -722,7 +721,7 @@ function initPanoramaView() {
     background.visible = true;
 
     var logoSize = 300;
-    var texture = textureLoader.load('./src/textures/logo.png');
+    var texture = textureLoader.load('http://ocnvj4kt8.bkt.clouddn.com/pano/textures/logo.png');
     texture.minFilter = THREE.NearestFilter;
     var planeGeometry = new THREE.PlaneBufferGeometry(logoSize, logoSize, 1, 1);
     var planeMaterial = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
@@ -737,8 +736,8 @@ function initPanoramaView() {
 }
 
 function createHotSpots() {
-    var texture = textureLoader.load('./src/textures/hotspot/feet.png');
-    var spriteTexture = textureLoader.load("./src/textures/hotspot_sprite.png");
+    var texture = textureLoader.load('http://ocnvj4kt8.bkt.clouddn.com/pano/textures/hotspot/feet.png');
+    var spriteTexture = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/hotspot_sprite.png");
 
     texture.minFilter = THREE.NearestFilter;
     var planeMaterial = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
@@ -747,7 +746,7 @@ function createHotSpots() {
     var hotSpotNameHeight = 40;
     var deltaHeight = -house.CameraHeight + 4.5;
 
-    var lightTexture = textureLoader.load('./src/textures/hotspot/light.png');
+    var lightTexture = textureLoader.load('http://ocnvj4kt8.bkt.clouddn.com/pano/textures/hotspot/light.png');
     lightTexture.minFilter = THREE.NearestFilter;
     var lightGeometry = new THREE.CylinderGeometry(lightRadius, lightRadius, lightMeshHeight, 30, 1, true);
     var lightMaterial = new THREE.MeshBasicMaterial({
@@ -1581,15 +1580,15 @@ function contains(a, obj) {
 function onSwitch2DButtonClicked() {
     setAutoMode(false);
     switchToMap(true);
-    switch2DButton.material.map = textureLoader.load("./src/textures/button_2D_pressed.png");
-    switch3DButton.material.map = textureLoader.load("./src/textures/button_3D.png");
+    switch2DButton.material.map = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_2D_pressed.png");
+    switch3DButton.material.map = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_3D.png");
 }
 
 function onSwitch3DButtonClicked() {
     setAutoMode(false);
     switchToMap(false);
-    switch2DButton.material.map = textureLoader.load("./src/textures/button_2D.png");
-    switch3DButton.material.map = textureLoader.load("./src/textures/button_3D_pressed.png");
+    switch2DButton.material.map = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_2D.png");
+    switch3DButton.material.map = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_3D_pressed.png");
 }
 
 // function onSwitch2D3DButtonClicked() {
@@ -1599,14 +1598,14 @@ function onSwitch3DButtonClicked() {
 
 function setAutoMode(needAutoMode) {
     if (needAutoMode) {
-        switchAutoButton.material.map = textureLoader.load("./src/textures/button_Auto_pressed.png");
+        switchAutoButton.material.map = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_Auto_pressed.png");
         starAutoPlayDelay();
         isAutoButtonPressed = true;
     }
     else {
         stopAutoPlay();
         isAutoButtonPressed = false;
-        switchAutoButton.material.map = textureLoader.load("./src/textures/button_Auto.png");
+        switchAutoButton.material.map = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_Auto.png");
     }
 }
 
@@ -1615,17 +1614,17 @@ function onSwitchAutoButtonClicked() {
         setAutoMode(false);
         // switchToMap(true);
         if (houseShapeSprite.visible) {
-            switch2DButton.material.map = textureLoader.load("./src/textures/button_2D_pressed.png");
+            switch2DButton.material.map = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_2D_pressed.png");
         }
         else {
-            switch3DButton.material.map = textureLoader.load("./src/textures/button_3D_pressed.png");
+            switch3DButton.material.map = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_3D_pressed.png");
         }
     }
     else {
         if (houseShapeSprite.visible) {
-            switch2DButton.material.map = textureLoader.load("./src/textures/button_2D.png");
+            switch2DButton.material.map = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_2D.png");
         } else {
-            switch3DButton.material.map = textureLoader.load("./src/textures/button_3D.png");
+            switch3DButton.material.map = textureLoader.load("http://ocnvj4kt8.bkt.clouddn.com/pano/textures/button_3D.png");
         }
         setAutoMode(true);
     }
@@ -1823,7 +1822,7 @@ function getHotSpotFromName(hotSpotName) {
 }
 
 function loadFaceTexture(roomFace, roomObj, smallRoomObj) {
-    var faceTexturePath = roomFace.ImagePath.replace(ossHost, domain);
+    var faceTexturePath = roomFace.ImagePath.replace(ossHost, domain + 'pano/');
 
     var texture = textureLoader.load(faceTexturePath, function (loadedTexture) {
         loadedTexture.minFilter = THREE.LinearFilter;  // fix image is not power of two (xxx). Resized to xxx img

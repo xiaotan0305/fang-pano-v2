@@ -7,7 +7,7 @@ const PanoramaControls = require('./panoCtrl.js');
 // var ossHost = "http://vrhouse.oss-cn-shanghai.aliyuncs.com/";
 // ossHost = "./house/22544f76-25cf-42db-aa44-53f309567dcf/";
 // var domain = "http://vrhouse.oss-cn-shanghai.aliyuncs.com/";
-var ossHost = './house/';
+var ossHost = '';
 var domain = './house/';
 // domain = 'http://ocnvj4kt8.bkt.clouddn.com/'
 
