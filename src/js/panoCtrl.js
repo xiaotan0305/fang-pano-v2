@@ -1,4 +1,4 @@
-var PanoramaControls = function (camera, domElement) {
+var PanoramaControls = function(camera, domElement) {
     this.enabled = false;
     this.isAutoPlay = false;
     var isPointDown = false;
@@ -97,7 +97,7 @@ var PanoramaControls = function (camera, domElement) {
         camera.updateProjectionMatrix();
     }
 
-    this.updateRotation = function () {
+    this.updateRotation = function() {
         theta = THREE.Math.radToDeg(-camera.rotation.y);
         phi = THREE.Math.radToDeg(camera.rotation.x);
 
@@ -119,10 +119,12 @@ var PanoramaControls = function (camera, domElement) {
     }
 
     function animate() {
-
         requestAnimationFrame(animate);
 
         update();
     }
 };
-module.exports = PanoramaControls;
+window.PanoramaControls = PanoramaControls;
+if (window.module) {
+    module.exports = PanoramaControls;
+}

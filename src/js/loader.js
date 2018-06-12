@@ -4,7 +4,7 @@
  * 判断是否支持webGL
  * @returns
  */
-var isWebGLSupport = function () {
+var isWebGLSupport = function() {
     try {
         var canvas = document.createElement('canvas');
         return !(!window.WebGLRenderingContext || !canvas.getContext('webgl') && !canvas.getContext('experimental-webgl'));
@@ -17,26 +17,26 @@ var isWebGLSupport = function () {
  * 获取浏览器信息
  * @returns
  */
-var getBrowser = function () {
+var getBrowser = function() {
     var e,
         userAgent = navigator.userAgent,
         n = userAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-    return /trident/i.test(n[1]) ? (e = /\brv[ :]+(\d+)/g.exec(userAgent) || [], { name: "IE", version: e[1] || "" }) : "Chrome" === n[1] && null !== (e = userAgent.match(/\bOPR|Edge\/(\d+)/)) ? {
-        name: "Opera",
+    return /trident/i.test(n[1]) ? (e = /\brv[ :]+(\d+)/g.exec(userAgent) || [], { name: 'IE', version: e[1] || '' }) : 'Chrome' === n[1] && null !== (e = userAgent.match(/\bOPR|Edge\/(\d+)/)) ? {
+        name: 'Opera',
         version: e[1]
-    } : (n = n[2] ? [n[1], n[2]] : [navigator.appName, navigator.appVersion, "-?"], null !== (e = userAgent.match(/version\/(\d+)/i)) && n.splice(1, 1, e[1]), { name: n[0], version: n[1] });
+    } : (n = n[2] ? [n[1], n[2]] : [navigator.appName, navigator.appVersion, '-?'], null !== (e = userAgent.match(/version\/(\d+)/i)) && n.splice(1, 1, e[1]), { name: n[0], version: n[1] });
 };
 
 /**
  * 加载script标签
  * @param url
  */
-var loadJavaScript = function (url) {
+var loadJavaScript = function(url) {
     var script = document.createElement('script');
     script.src = url;
     script.async = false;
     if (navigator.userAgent.indexOf('MSIE') > 0) {
-        script.onreadystatechange = function () {
+        script.onreadystatechange = function() {
             if (this.readyState === 'loaded' || this.readyState === 'complete') {
                 callback();
                 this.onload = this.onreadystatechange = null;
@@ -44,7 +44,7 @@ var loadJavaScript = function (url) {
             }
         };
     } else {
-        script.onload = function () {
+        script.onload = function() {
             // this.onload = this.onreadystatechange = null;
             // this.parentNode.removeChild(this);
         };
@@ -56,7 +56,7 @@ var loadJavaScript = function (url) {
  * 加载script标签
  * @param urlArr
  */
-var loadJavaScripts = function (urlArr) {
+var loadJavaScripts = function(urlArr) {
     // var loadedFn = function () {
     //     if (++n === urlArr.length) {
     //         callback && callback();
@@ -72,7 +72,7 @@ var loadJavaScripts = function (urlArr) {
 /**
  * 页面加载后初始化
  */
-window.onload = function () {
+window.onload = function() {
     if (isWebGLSupport()) {
         var arr = [
             'lib/jquery/jquery.min.js',
@@ -81,7 +81,8 @@ window.onload = function () {
             'lib/vr/PhoneVR.js',
             'lib/vr/VRControls.js',
             'lib/vr/VREffect.js',
-            'dist/pano.min.js'
+            'src/js/panoCtrl.js',
+            'src/js/pano.js'
         ];
         loadJavaScripts(arr);
     } else {

@@ -2,7 +2,12 @@
  * Created by Shirlman on 12/15/2016.
  */
 
-const PanoramaControls = require('./panoCtrl.js');
+var PanoramaControls;
+if (typeof require === 'function') {
+    PanoramaControls = require('./panoCtrl.js');
+}else {
+    PanoramaControls = window.PanoramaControls;
+}
 
 // var ossHost = "http://vrhouse.oss-cn-shanghai.aliyuncs.com/";
 // ossHost = "./house/22544f76-25cf-42db-aa44-53f309567dcf/";
@@ -25,7 +30,7 @@ var is3DPrepared = false;
 var isDebugMode = false;
 var isMouseDown = false;
 var lastSectorSpriteRotation;
-var debugTextValue = "";
+var debugTextValue = '';
 var switch2D3DButton, switch2DButton, switch3DButton, switchAutoButton, fullScreen3DHouseButton, is3DMode, isAutoButtonPressed = true, isAutoRotate = false;
 var firstCubProgress = [];
 var SCREEN_WIDTH, SCREEN_HEIGHT;
@@ -34,9 +39,9 @@ var hotSpotScale, hotSpotDistance, hotSpotDirection, hotSpotNameDirection, hotSp
 var container = document.getElementById('vr_house_container');
 
 // const string
-var overViewHotSpotNameSuffix = "_overViewHotSpotName";
-var hotSpotNameSuffix = "_hotSpotName";
-var hotSpotLineName = "_hotSpotLine";
+var overViewHotSpotNameSuffix = '_overViewHotSpotName';
+var hotSpotNameSuffix = '_hotSpotName';
+var hotSpotLineName = '_hotSpotLine';
 
 var house, houseObj;
 var houseSize;
@@ -58,15 +63,15 @@ var isPhone;
 var defaultFov = 100;
 var vrModeFov = 93;
 
-var zoomInDiv = document.getElementById("zoomInDiv");
-var zoomOutDiv = document.getElementById("zoomOutDiv");
-var switchToOverviewDiv = document.getElementById("switchToOverviewDiv");
+var zoomInDiv = document.getElementById('zoomInDiv');
+var zoomOutDiv = document.getElementById('zoomOutDiv');
+var switchToOverviewDiv = document.getElementById('switchToOverviewDiv');
 var switchToHotSpotViewDiv = document.getElementById('switchToHotSpotViewDiv');
-var switchVRButton = document.getElementById("switchVRButton");
-var switchFullscreenButton = document.getElementById("switchFullscreenButton");
-var enterHotSpotTip = document.getElementById("enterHotSpotTip");
-var vrStartTip = document.getElementById("vrStartTip");
-var debugText = document.getElementById("debugText");
+var switchVRButton = document.getElementById('switchVRButton');
+var switchFullscreenButton = document.getElementById('switchFullscreenButton');
+var enterHotSpotTip = document.getElementById('enterHotSpotTip');
+var vrStartTip = document.getElementById('vrStartTip');
+var debugText = document.getElementById('debugText');
 
 var houseScale = 1;
 
@@ -87,7 +92,7 @@ var autoRotateTimer;
 var autoPlayTimer;
 
 // web VR
-//Apply VR headset positional data to camera.
+// Apply VR headset positional data to camera.
 var vrControls, vrEffect;
 var crosshair;
 var isVREnabled = false;
@@ -106,11 +111,11 @@ if (isWebglSupport()) {
     getHouseViewData();
 } else {
     var browser = getBrowser();
-    var tip = "您的浏览器不支持VR看房，当前浏览器版本是：" + browser.name + " " + browser.version + "<br/>"
-        + "请使用以下浏览器：<br/>IE11、IE Edge、Firefox48+、Chrome50+、Safari9+、猎豹浏览器、360浏览器、UC浏览器<br/>"
-        + checkIsPhone() ? "请升级您的浏览器版本" : "请使用win7以上的系统";
+    var tip = '您的浏览器不支持VR看房，当前浏览器版本是：' + browser.name + ' ' + browser.version + '<br/>'
+        + '请使用以下浏览器：<br/>IE11、IE Edge、Firefox48+、Chrome50+、Safari9+、猎豹浏览器、360浏览器、UC浏览器<br/>'
+        + checkIsPhone() ? '请升级您的浏览器版本' : '请使用win7以上的系统';
 
-    document.getElementById("loading_tip").innerHTML = tip;
+    document.getElementById('loading_tip').innerHTML = tip;
 }
 
 function isWebglSupport() {
@@ -127,10 +132,10 @@ function getBrowser() {
         M = ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
     if (/trident/i.test(M[1])) {
         tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
-        return { name: 'IE', version: (tem[1] || '') };
+        return { name: 'IE', version: tem[1] || '' };
     }
     if (M[1] === 'Chrome') {
-        tem = ua.match(/\bOPR|Edge\/(\d+)/)
+        tem = ua.match(/\bOPR|Edge\/(\d+)/);
         if (tem != null) {
             return { name: 'Opera', version: tem[1] };
         }
@@ -146,18 +151,18 @@ function getBrowser() {
 }
 
 function getHouseViewData() {
-    houseId = getParameterByName("hid");
+    houseId = getParameterByName('hid');
     houseId = '22544f76-25cf-42db-aa44-53f309567dcf';
     // houseId = 'pano';
-    rootPathPanoTile = domain + houseId + "/PanoramaTileImages/";
-    rootPathPanoBlur = domain + houseId + "/PanoramaBlurTileImages/";
-    var viewMode = getParameterByName("mode");
+    rootPathPanoTile = domain + houseId + '/PanoramaTileImages/';
+    rootPathPanoBlur = domain + houseId + '/PanoramaBlurTileImages/';
+    var viewMode = getParameterByName('mode');
     if (isDebugMode) {
-        debugText.style.visibility = "visible";
+        debugText.style.visibility = 'visible';
         debugLog(debugText.style.visibility);
     }
 
-    if (viewMode == "single") {
+    if (viewMode == 'single') {
         isShowThumbnail = true;
         isSingleMode = true;
     }
@@ -167,21 +172,21 @@ function getHouseViewData() {
         var r = new XMLHttpRequest();
         r.open(method, url);
         r.send(JSON.stringify(data));
-        r.onreadystatechange = function (a, b) {
+        r.onreadystatechange = function(a, b) {
             if (this.readyState === 4 && this.status === 200) {
                 callback && callback(this.responseText);
             } else if (this.status !== 200) {
                 callback && callback(null);
             }
-        }
+        };
     }
-    ajax('get', url, '', function (data) {
+    ajax('get', url, '', function(data) {
         if (data !== null) {
             house = JSON.parse(data);
-            document.title = house.Name + "(极速版)";
+            document.title = house.Name + '(极速版)';
             if (isSingleMode) {
                 if (house.HotSpots.length == 0) {
-                    document.getElementById("loading_tip").innerHTML = "没有全景图片";
+                    document.getElementById('loading_tip').innerHTML = '没有全景图片';
                 } else {
                     initPanoramaHouse();
                 }
@@ -189,9 +194,9 @@ function getHouseViewData() {
                 init3DHouse();
             }
         }else {
-            document.getElementById("loading_tip").innerHTML = "您要浏览的房子不存在";
+            document.getElementById('loading_tip').innerHTML = '您要浏览的房子不存在';
         }
-    })
+    });
     // $.ajax({
     //     url: url,
     //     type: "GET",
@@ -243,7 +248,7 @@ function init3DHouse() {
     initPanoramaView();
 
     initVRCrosshair();
-    //initAxis();
+    // initAxis();
     createHouse();
 
     // initGround();
@@ -252,7 +257,7 @@ function init3DHouse() {
     registerEventListener();
 
     var isLandscape = isLandscapeOrNot();
-    debugLog("init3DHouse,isLandscape: " + isLandscape);
+    debugLog('init3DHouse,isLandscape: ' + isLandscape);
     setOverviewCameraControllerDistance(isLandscape);
     setDefaultCameraPosition(isLandscape);
     showFirstHotSpotAfterLoading();
@@ -287,19 +292,18 @@ function initThreejs() {
 
     // 3D camera
     camera = new THREE.PerspectiveCamera(defaultFov, SCREEN_WIDTH / SCREEN_HEIGHT, 0.5, 100000);
-    camera.rotation.reorder("YXZ");
+    camera.rotation.reorder('YXZ');
     scene.add(camera);
     isSwitching = false;
     switchTime = 2;
 
     if (!isSingleMode) {
-
         // camera SmallHouse
         sceneSmallHouse = new THREE.Scene();
         sceneSmallHouse.visible = false;
         // 通过Fov来控制smallHouseObj的大小，值越大，视野越大，房子越小
         cameraSmallHouse = new THREE.PerspectiveCamera(35, mapWidth / mapHeight, 0.5, 100000);
-        cameraSmallHouse.rotation.reorder("YXZ");
+        cameraSmallHouse.rotation.reorder('YXZ');
         cameraSmallHouse.position.z = 1;
         // var smallBgGeometry = new THREE.SphereBufferGeometry(2, 1, 1);
         // var smallBgMaterial = new THREE.MeshPhongMaterial({
@@ -362,7 +366,7 @@ function initMap() {
     hotSpotDirection = -0.5;
     hotSpotNameDirection = -38 / 13;
     hotSpotNameDistance = 13;
-    var houseShapePath = domain + houseId + "/FloorPlans/" + houseId + ".png";
+    var houseShapePath = domain + houseId + '/FloorPlans/' + houseId + '.png';
 
     textureLoader.load(houseShapePath, createHUDSprites);
 
@@ -370,7 +374,7 @@ function initMap() {
     hotSpotGroup.visible = false;
     mapGroup.add(hotSpotGroup);
 
-    hotSpotNameTag = createTextSprite("",
+    hotSpotNameTag = createTextSprite('',
         { fontsize: 50, backgroundColor: { r: 0, g: 0, b: 0, a: 0.498039 }, cornerAngle: 12 });
     hotSpotNameTag.scale.set(210, 30, 1);
     hotSpotNameTag.visible = false;
@@ -378,7 +382,7 @@ function initMap() {
 }
 
 function createHUDSprites(texture) {
-    //和cameraSmallHouse.position.z的距离配合使不被其他东西挡住
+    // 和cameraSmallHouse.position.z的距离配合使不被其他东西挡住
     var factor = 500 / Math.max(houseSize.x, houseSize.z);
     var samllHouseScale = factor * 0.0011;
     smallHouseObj.scale.set(samllHouseScale, samllHouseScale, samllHouseScale);
@@ -393,24 +397,24 @@ function createHUDSprites(texture) {
     // fullScreen3DHouseButton.visible = false;
     // register2DClickEvent(fullScreen3DHouseButton, onSwitchToOverviewClicked);
     // buttonGroup.add(fullScreen3DHouseButton);
-    textureLoader.load("./src/textures/button_Auto.png");
-    textureLoader.load("./src/textures/button_2D_pressed.png");
-    textureLoader.load("./src/textures/button_3D_pressed.png");
-    var switchAutoButtonTexture = textureLoader.load("./src/textures/button_Auto_pressed.png");
+    textureLoader.load('./src/textures/button_Auto.png');
+    textureLoader.load('./src/textures/button_2D_pressed.png');
+    textureLoader.load('./src/textures/button_3D_pressed.png');
+    var switchAutoButtonTexture = textureLoader.load('./src/textures/button_Auto_pressed.png');
     var switchAutoButtonMaterial = new THREE.SpriteMaterial({ map: switchAutoButtonTexture });
     switchAutoButton = new THREE.Sprite(switchAutoButtonMaterial);
     switchAutoButton.scale.set(50, 25, 1);
     register2DClickEvent(switchAutoButton, onSwitchAutoButtonClicked);
     buttonGroup.add(switchAutoButton);
 
-    var switch2DButtonTexture = textureLoader.load("./src/textures/button_2D.png");
+    var switch2DButtonTexture = textureLoader.load('./src/textures/button_2D.png');
     var switch2DButtonMaterial = new THREE.SpriteMaterial({ map: switch2DButtonTexture });
     switch2DButton = new THREE.Sprite(switch2DButtonMaterial);
     switch2DButton.scale.set(40, 25, 1);
     register2DClickEvent(switch2DButton, onSwitch2DButtonClicked);
     buttonGroup.add(switch2DButton);
 
-    var switch3DButtonTexture = textureLoader.load("./src/textures/button_3D.png");
+    var switch3DButtonTexture = textureLoader.load('./src/textures/button_3D.png');
     var switch3DButtonMaterial = new THREE.SpriteMaterial({ map: switch3DButtonTexture });
     switch3DButton = new THREE.Sprite(switch3DButtonMaterial);
     switch3DButton.scale.set(40, 25, 1);
@@ -422,7 +426,7 @@ function createHUDSprites(texture) {
     // register2DClickEvent(switch2D3DButton, onSwitch2D3DButtonClicked);
     // buttonGroup.add(switch2D3DButton);
 
-    var sectorTexture = textureLoader.load("./src/textures/sector.png");
+    var sectorTexture = textureLoader.load('./src/textures/sector.png');
     var sectorMaterial = new THREE.SpriteMaterial({ map: sectorTexture });
     sectorSprite = new THREE.Sprite(sectorMaterial);
     sectorSprite.scale.set(100, 100, 1);
@@ -430,7 +434,7 @@ function createHUDSprites(texture) {
     hotSpotGroup.add(sectorSprite);
     lastSectorSpriteRotation = camera.rotation.y;
 
-    var hotSpotTexture = textureLoader.load("./src/textures/hotSpotPoint.png");
+    var hotSpotTexture = textureLoader.load('./src/textures/hotSpotPoint.png');
     var hotSpotMaterial = new THREE.SpriteMaterial({ map: hotSpotTexture });
     for (var index in allHotSpots) {
         var hotSpot = allHotSpots[index].tag;
@@ -441,7 +445,7 @@ function createHUDSprites(texture) {
         hotSpotSprite.scale.set(30, 30, 1);
         hotSpotSprite.position.set(allHotSpots[index].position.x * hotSpotScale, -allHotSpots[index].position.z * hotSpotScale, 1);
         hotSpot.floorPlanPosition = hotSpotSprite.position.clone();
-        register2DClickEvent(hotSpotSprite, function (hotSpotObj) {
+        register2DClickEvent(hotSpotSprite, function(hotSpotObj) {
             onThumbnailClicked(hotSpotObj.tag.thumbnailElement, true);
         });
         // hotSpotSprite.visible = false;
@@ -457,7 +461,7 @@ function createHUDSprites(texture) {
     houseShapeSprite.visible = false;
     mapGroup.add(houseShapeSprite);
 
-    var bgTexture = textureLoader.load("./src/textures/bg.png", function () {
+    var bgTexture = textureLoader.load('./src/textures/bg.png', function() {
         sceneOrtho.visible = true;
         for (var roomIndex in house.Rooms) {
             var room = house.Rooms[roomIndex];
@@ -486,7 +490,7 @@ function createHUDSprites(texture) {
     for (var index in allHotSpots) {
         if (allHotSpots[index].tag == clickedHotSpot) {
             hotSpotNameTag.position.set(allHotSpots[index].tag.floorPlanPosition.x + hotSpotNameDistance, allHotSpots[index].tag.floorPlanPosition.y + hotSpotNameDistance * hotSpotNameDirection, 1);
-            updateTextSprite(hotSpotNameTag, allHotSpots[index].tag.Name.split("-")[0]);
+            updateTextSprite(hotSpotNameTag, allHotSpots[index].tag.Name.split('-')[0]);
             sectorSprite.position.set(allHotSpots[index].position.x * hotSpotScale, -allHotSpots[index].position.z * hotSpotScale, 1);
             break;
         }
@@ -516,14 +520,14 @@ function updateHUDSprites() {
 
 function checkIsPhone() {
     var sUserAgent = navigator.userAgent.toLowerCase();
-    var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-    var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-    var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-    var bIsAndroid = sUserAgent.match(/android/i) == "android";
-    var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-    var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+    var bIsIpad = sUserAgent.match(/ipad/i) == 'ipad';
+    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == 'iphone os';
+    var bIsMidp = sUserAgent.match(/midp/i) == 'midp';
+    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == 'rv:1.2.3.4';
+    var bIsUc = sUserAgent.match(/ucweb/i) == 'ucweb';
+    var bIsAndroid = sUserAgent.match(/android/i) == 'android';
+    var bIsCE = sUserAgent.match(/windows ce/i) == 'windows ce';
+    var bIsWM = sUserAgent.match(/windows mobile/i) == 'windows mobile';
 
     var isPhone = bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM;
 
@@ -544,8 +548,8 @@ function render() {
     if (SCREEN_WIDTH != window.innerWidth || SCREEN_HEIGHT != window.innerHeight) {
         SCREEN_WIDTH = window.innerWidth;
         SCREEN_HEIGHT = window.innerHeight;
-        debugLog("R_SCREEN_WIDTH:" + SCREEN_WIDTH);
-        debugLog("R_SCREEN_HEIGHT" + SCREEN_HEIGHT);
+        debugLog('R_SCREEN_WIDTH:' + SCREEN_WIDTH);
+        debugLog('R_SCREEN_HEIGHT' + SCREEN_HEIGHT);
         resizeWindow();
     }
     if (openStats) {
@@ -554,9 +558,9 @@ function render() {
 
     cameraZoomAnimation();
 
-    //Leo matterport way
+    // Leo matterport way
     // cameraSwitchAnimation();
-    //Leo end
+    // Leo end
 
     // camera.position.x += 0.1;
     camera.updateProjectionMatrix();
@@ -569,8 +573,7 @@ function render() {
     if (smallHouseObj != undefined && sceneSmallHouse.visible) {
         if (isAutoRotate) {
             smallHouseObj.rotation.y -= 0.0025;
-        }
-        else {
+        } else {
             smallHouseObj.rotation.y = -camera.rotation.y;
         }
         // smallHouseObj.rotation.x = -camera.rotation.x;
@@ -591,12 +594,9 @@ function render() {
                 mouseHoverObj = intersects[0].object;
                 hotSpotNameTag.position.set(mouseHoverObj.position.x + hotSpotNameDistance, mouseHoverObj.position.y + hotSpotNameDistance * hotSpotNameDirection, 1);
                 updateTextSprite(hotSpotNameTag, mouseHoverObj.name);
-            }
-            else {
-                if (clickedHotSpot != undefined) {
-                    hotSpotNameTag.position.set(clickedHotSpot.floorPlanPosition.x + hotSpotNameDistance, clickedHotSpot.floorPlanPosition.y + hotSpotNameDistance * hotSpotNameDirection, 1);
-                    updateTextSprite(hotSpotNameTag, clickedHotSpot.Name.split("-")[0]);
-                }
+            } else if (clickedHotSpot != undefined) {
+                hotSpotNameTag.position.set(clickedHotSpot.floorPlanPosition.x + hotSpotNameDistance, clickedHotSpot.floorPlanPosition.y + hotSpotNameDistance * hotSpotNameDirection, 1);
+                updateTextSprite(hotSpotNameTag, clickedHotSpot.Name.split('-')[0]);
             }
         }
     }
@@ -606,7 +606,6 @@ function render() {
     renderer.clearDepth();
 
     if (isEnableVRMode) {
-
         if (!emulateVRControl) {
             vrControls.update();
         }
@@ -632,8 +631,7 @@ function renderCamera() {
         renderer.setViewport(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
         renderer.render(scene, camera);
         renderer.render(sceneOrtho, cameraOrtho);
-    }
-    else {
+    } else {
         renderer.render(scene, camera);
     }
 }
@@ -659,7 +657,7 @@ function showAllRooms(show) {
     }
 
     if (show && isShowThumbnail) {
-        var thumbnailList = $("#thumbnail-list").children("#thumbnail");
+        var thumbnailList = $('#thumbnail-list').children('#thumbnail');
 
         for (var index in thumbnailList) {
             if (thumbnailList[index].thumbnailData.isSelected) {
@@ -738,7 +736,7 @@ function initPanoramaView() {
 
 function createHotSpots() {
     var texture = textureLoader.load('./src/textures/hotspot/feet.png');
-    var spriteTexture = textureLoader.load("./src/textures/hotspot_sprite.png");
+    var spriteTexture = textureLoader.load('./src/textures/hotspot_sprite.png');
 
     texture.minFilter = THREE.NearestFilter;
     var planeMaterial = new THREE.MeshBasicMaterial({ map: texture, transparent: true });
@@ -772,12 +770,12 @@ function createHotSpots() {
 
         var hotSpotName = hotSpot.Name;
 
-        if (hotSpot.Type == "Door" && hotSpot.Name.split("-").length > 2) {
+        if (hotSpot.Type == 'Door' && hotSpot.Name.split('-').length > 2) {
             hotSpotName = hotSpot.Name.substring(0, hotSpot.Name.lastIndexOf('-'));
         }
 
-        if (hotSpot.Type == "Room" && hotSpot.Name.split("-").length > 1) {
-            hotSpotName = hotSpot.Name.split("-")[0];
+        if (hotSpot.Type == 'Room' && hotSpot.Name.split('-').length > 1) {
+            hotSpotName = hotSpot.Name.split('-')[0];
         }
 
         hotSpotObj.tagName = hotSpotName;
@@ -792,7 +790,7 @@ function createHotSpots() {
         lightObj.position.set(0, lightMeshHeight / 2, 0);
         lightObj.name = hotSpot.Name;
 
-        registerClickEvent(lightObj, function (lightObj) {
+        registerClickEvent(lightObj, function(lightObj) {
             onThumbnailClicked(lightObj.parent.tag.thumbnailElement, true);
         });
 
@@ -836,7 +834,7 @@ function createHotSpots() {
         hotSpotObj.hotSpotNameSprite = hotSpotNameSprite;
         hotSpotNames.push(hotSpotName);
 
-        registerClickEvent(hotSpotNameSprite, function (hotSpotNameSprite) {
+        registerClickEvent(hotSpotNameSprite, function(hotSpotNameSprite) {
             onThumbnailClicked(hotSpotNameSprite.parent.parent.tag.thumbnailElement, true);
         });
 
@@ -868,11 +866,11 @@ function createHotSpots() {
 }
 
 function resizeWindow() {
-    debugLog("resizeWindow");
+    debugLog('resizeWindow');
     SCREEN_WIDTH = window.innerWidth;
     SCREEN_HEIGHT = window.innerHeight;
-    debugLog("SCREEN_WIDTH:" + SCREEN_WIDTH);
-    debugLog("SCREEN_HEIGHT" + SCREEN_HEIGHT);
+    debugLog('SCREEN_WIDTH:' + SCREEN_WIDTH);
+    debugLog('SCREEN_HEIGHT' + SCREEN_HEIGHT);
 
     // renderer.setSize(SCREEN_WIDTH, SCREEN_WIDTH);
     camera.aspect = SCREEN_WIDTH / SCREEN_HEIGHT;
@@ -917,7 +915,7 @@ function registerEventListener() {
 }
 
 function onOrientionChangeDelay() {
-    debugLog("onOrientionChangeDelay");
+    debugLog('onOrientionChangeDelay');
     // if (checkIsIOS()) {
     //     renderer.setSize(1, 1);
     //
@@ -930,7 +928,7 @@ function onOrientionChangeDelay() {
 function onOrientionChange(event) {
     var isLandscape = isLandscapeOrNot();
 
-    debugLog("onOrientionChange,isLandscape: " + isLandscape);
+    debugLog('onOrientionChange,isLandscape: ' + isLandscape);
     if (isLandscape == undefined) {
         return;
     }
@@ -943,24 +941,22 @@ function onOrientionChange(event) {
             if (!isVREnabled) {
                 switchVRMode(true);
             }
-        } else {
-            if (isVREnabled) {
-                switchVRMode(false);
-            }
+        } else if (isVREnabled) {
+            switchVRMode(false);
         }
     }
 
-    var thumbnailList = document.getElementById("thumbnail-list");
+    var thumbnailList = document.getElementById('thumbnail-list');
 
     if (isLandscape) {
         for (var index in thumbnailList.children) {
-            thumbnailList.children[index].classList.remove("col-xs-3");
-            thumbnailList.children[index].classList.add("col-xs-2");
+            thumbnailList.children[index].classList.remove('col-xs-3');
+            thumbnailList.children[index].classList.add('col-xs-2');
         }
     } else {
         for (var index in thumbnailList.children) {
-            thumbnailList.children[index].classList.remove("col-xs-2");
-            thumbnailList.children[index].classList.add("col-xs-3");
+            thumbnailList.children[index].classList.remove('col-xs-2');
+            thumbnailList.children[index].classList.add('col-xs-3');
         }
     }
 }
@@ -979,7 +975,7 @@ function isLandscapeOrNot() {
 
 function onMouseMove(event) {
     event.preventDefault();
-    mouse.x = (event.clientX / renderer.domElement.clientWidth) * 2 - 1;
+    mouse.x = event.clientX / renderer.domElement.clientWidth * 2 - 1;
     mouse.y = -(event.clientY / renderer.domElement.clientHeight) * 2 + 1;
     // console.log(mouse.x + " " + mouse.y);
 }
@@ -1011,14 +1007,12 @@ function eventHandler(event) {
                 clearTimeout(autoRotateTimer);
             }
 
-            autoRotateTimer = setTimeout(function () {
+            autoRotateTimer = setTimeout(function() {
                 overviewCameraController.autoRotate = isOverviewAutoRotate;
             }, 3000);
-        } else {
-            if (!isAutoRotate && isAutoButtonPressed) {
-                // stopAutoPlay();
-                starAutoPlayDelay();
-            }
+        } else if (!isAutoRotate && isAutoButtonPressed) {
+            // stopAutoPlay();
+            starAutoPlayDelay();
         }
     }
 }
@@ -1045,22 +1039,20 @@ function getIntersectObj(event) {
     } else if (event.type == 'touchend') {
         x = event.changedTouches[0].pageX;
         y = event.changedTouches[0].pageY;
-    }
-    else {
+    } else {
         x = event.clientX;
         y = event.clientY;
     }
-    mouse.x = (x / renderer.domElement.clientWidth) * 2 - 1;
+    mouse.x = x / renderer.domElement.clientWidth * 2 - 1;
     mouse.y = -(y / renderer.domElement.clientHeight) * 2 + 1;
 
-    //check 2D intersects first
+    // check 2D intersects first
     raycaster.setFromCamera(mouse, cameraOrtho);
     var intersects = raycaster.intersectObjects(clickableObjects2D);
 
     if (intersects.length > 0 && sceneOrtho.visible && (houseShapeSprite.visible && intersects[0].object.tag != undefined || intersects[0].object.tag == undefined)) {
         inetsectObject = intersects[0].object;
-    }
-    else {
+    } else {
         // if 2D intersects is empty then check 3D intersects
         raycaster.setFromCamera(mouse, camera);
         intersects = raycaster.intersectObjects(clickableObjects);
@@ -1089,14 +1081,12 @@ function checkVRIntersect() {
     var intesectObject = getVRIntersectObj();
 
     if (previousVRIntersectObj != intesectObject) {
-
         if (vrGazeTimer != undefined) {
             clearTimeout(vrGazeTimer);
         }
 
         if (intesectObject != undefined) {
-
-            vrGazeTimer = setTimeout(function () {
+            vrGazeTimer = setTimeout(function() {
                 intesectObject.onClick(intesectObject);
             }, 1500);
         }
@@ -1118,21 +1108,20 @@ function onSwitchToOverviewClicked() {
     }
 
     if (isShowThumbnail) {
-        document.getElementById("thumbnail-controller").style.visibility = "visible";
-    }
-    else {
-        document.getElementById("thumbnail-controller").style.visibility = "hidden";
+        document.getElementById('thumbnail-controller').style.visibility = 'visible';
+    } else {
+        document.getElementById('thumbnail-controller').style.visibility = 'hidden';
         closeMap();
     }
 
     // switchToOverviewDiv.style.visibility = "hidden";
     switchToHotSpotViewDiv.style.visibility = 'visible';
-    zoomInDiv.style.visibility = "hidden";
-    zoomOutDiv.style.visibility = "hidden";
-    enterHotSpotTip.style.visibility = "visible";
-    switchVRButton.style.visibility = "hidden";
+    zoomInDiv.style.visibility = 'hidden';
+    zoomOutDiv.style.visibility = 'hidden';
+    enterHotSpotTip.style.visibility = 'visible';
+    switchVRButton.style.visibility = 'hidden';
 
-    //Leo matterport way
+    // Leo matterport way
     // isSwitching = true;
     // var frameSpeed = 60;
     // switchSpeed.x = (previousCameraPosition.x - camera.position.x) / switchTime / frameSpeed;
@@ -1141,7 +1130,7 @@ function onSwitchToOverviewClicked() {
     // rotationSpeed.x = (previousCameraRotation.x - camera.rotation.x) / switchTime / frameSpeed;
     // rotationSpeed.y = (previousCameraRotation.y - camera.rotation.y) / switchTime / frameSpeed;
     // rotationSpeed.z = (previousCameraRotation.z - camera.rotation.z) / switchTime / frameSpeed;
-    //Leo end
+    // Leo end
 
     clickedHotSpot = null;
     camera.position.copy(previousCameraPosition);
@@ -1158,13 +1147,13 @@ function onSwitchToOverviewClicked() {
         allHotSpots[index].scale.set(scale, 1, scale);
     }
 
-    //Leo matterport way
+    // Leo matterport way
     // setTimeout(function () {
     //     overviewCameraController.enabled = true;
     //     overviewCameraController.autoRotate = isOverviewAutoRotate;
     //     overviewCameraController.update();
     // }, switchTime * 1000 + 500);
-    //Leo end
+    // Leo end
 
     overviewCameraController.enabled = true;
     overviewCameraController.autoRotate = isOverviewAutoRotate;
@@ -1187,13 +1176,13 @@ function onSwitchToOverviewClicked() {
 }
 
 function switchToHotSpotView() {
-    document.getElementById("thumbnail-controller").style.visibility = "visible";
+    document.getElementById('thumbnail-controller').style.visibility = 'visible';
     // mapGroup.visible = true;
     switchToHotSpotViewDiv.style.visibility = 'hidden';
-    zoomInDiv.style.visibility = "visible";
-    zoomOutDiv.style.visibility = "visible";
-    enterHotSpotTip.style.visibility = "hidden";
-    switchVRButton.style.visibility = "visible";
+    zoomInDiv.style.visibility = 'visible';
+    zoomOutDiv.style.visibility = 'visible';
+    enterHotSpotTip.style.visibility = 'hidden';
+    switchVRButton.style.visibility = 'visible';
 
     showOverviewHotSpotNames(false);
 
@@ -1262,7 +1251,7 @@ function onHotSpotNameClicked(hotSpotNameObj) {
 }
 
 function onFirstHotSpotClicked(hotSpot, onLoad, onProgress, onError) {
-    console.log("fisrt:" + hotSpot.Name);
+    console.log('fisrt:' + hotSpot.Name);
 
     if (!isHotSpotClickble || clickedHotSpot == hotSpot) {
         return;
@@ -1273,43 +1262,43 @@ function onFirstHotSpotClicked(hotSpot, onLoad, onProgress, onError) {
     isHotSpotClickble = false;
 
     if (hotSpot.cached == undefined || hotSpot.cached == false) {
-        document.getElementById("loading").style.visibility = "visible";
+        document.getElementById('loading').style.visibility = 'visible';
     }
     var imageName;
 
     if (isSingleMode) {
         imageName = hotSpot.ImagePath;
     } else {
-        imageName = hotSpot.ImagePath.substring(hotSpot.ImagePath.lastIndexOf("/") + 1);
+        imageName = hotSpot.ImagePath.substring(hotSpot.ImagePath.lastIndexOf('/') + 1);
     }
 
-    imageName = imageName.substring(0, imageName.lastIndexOf("."));
+    imageName = imageName.substring(0, imageName.lastIndexOf('.'));
 
     var urls = [
-        rootPathPanoBlur + imageName + "_l.jpg",
-        rootPathPanoBlur + imageName + "_r.jpg",
-        rootPathPanoBlur + imageName + "_u.jpg",
-        rootPathPanoBlur + imageName + "_d.jpg",
-        rootPathPanoBlur + imageName + "_f.jpg",
-        rootPathPanoBlur + imageName + "_b.jpg"
+        rootPathPanoBlur + imageName + '_l.jpg',
+        rootPathPanoBlur + imageName + '_r.jpg',
+        rootPathPanoBlur + imageName + '_u.jpg',
+        rootPathPanoBlur + imageName + '_d.jpg',
+        rootPathPanoBlur + imageName + '_f.jpg',
+        rootPathPanoBlur + imageName + '_b.jpg'
     ];
 
     loadCubePanoramaTexture(urls,
-        function (cubeTexture) {
+        function(cubeTexture) {
             onPanoramaImageLoad(cubeTexture, hotSpot);
 
             if (onLoad) {
                 onLoad();
             }
-        }, function (index, xhr) {
+        }, function(index, xhr) {
             if (onProgress) {
                 onProgress(index, xhr);
             }
         },
-        function (xhr) {
+        function(xhr) {
             isHotSpotClickble = true;
 
-            document.getElementById("loading").style.visibility = "hidden";
+            document.getElementById('loading').style.visibility = 'hidden';
 
             if (onError) {
                 onError();
@@ -1324,22 +1313,22 @@ function onHotSpotClicked(hotSpot, onLoad, onProgress, onError) {
     if (isSingleMode) {
         imageName = hotSpot.ImagePath;
     } else {
-        imageName = hotSpot.ImagePath.substring(hotSpot.ImagePath.lastIndexOf("/") + 1);
+        imageName = hotSpot.ImagePath.substring(hotSpot.ImagePath.lastIndexOf('/') + 1);
     }
 
-    imageName = imageName.substring(0, imageName.lastIndexOf("."));
+    imageName = imageName.substring(0, imageName.lastIndexOf('.'));
 
     var urls = [
-        rootPathPanoTile + imageName + "_l.jpg",
-        rootPathPanoTile + imageName + "_r.jpg",
-        rootPathPanoTile + imageName + "_u.jpg",
-        rootPathPanoTile + imageName + "_d.jpg",
-        rootPathPanoTile + imageName + "_f.jpg",
-        rootPathPanoTile + imageName + "_b.jpg"
+        rootPathPanoTile + imageName + '_l.jpg',
+        rootPathPanoTile + imageName + '_r.jpg',
+        rootPathPanoTile + imageName + '_u.jpg',
+        rootPathPanoTile + imageName + '_d.jpg',
+        rootPathPanoTile + imageName + '_f.jpg',
+        rootPathPanoTile + imageName + '_b.jpg'
     ];
 
     loadCubePanoramaTexture(urls,
-        function (cubeTexture) {
+        function(cubeTexture) {
             disposeSkyBoxTexture();
             for (var i = 0; i < skyBox.material.materials.length; i++) {
                 skyBox.material.materials[i].map = cubeTexture[i];
@@ -1347,15 +1336,15 @@ function onHotSpotClicked(hotSpot, onLoad, onProgress, onError) {
             if (onLoad) {
                 onLoad();
             }
-        }, function (index, xhr) {
+        }, function(index, xhr) {
             if (onProgress) {
                 onProgress(index, xhr);
             }
         },
-        function (xhr) {
+        function(xhr) {
             isHotSpotClickble = true;
 
-            document.getElementById("loading").style.visibility = "hidden";
+            document.getElementById('loading').style.visibility = 'hidden';
 
             if (onError) {
                 onError();
@@ -1364,7 +1353,7 @@ function onHotSpotClicked(hotSpot, onLoad, onProgress, onError) {
 }
 
 function onPanoramaImageLoad(cubeTexture, hotSpot) {
-    document.getElementById("loading").style.visibility = "hidden";
+    document.getElementById('loading').style.visibility = 'hidden';
 
     if (isOverview) {
         switchToHotSpotView();
@@ -1382,7 +1371,7 @@ function onPanoramaImageLoad(cubeTexture, hotSpot) {
     if (!isSingleMode) {
         if (hotSpotNameTag) {
             hotSpotNameTag.position.set(clickedHotSpot.floorPlanPosition.x + hotSpotNameDistance, clickedHotSpot.floorPlanPosition.y + hotSpotNameDistance * hotSpotNameDirection, 1);
-            updateTextSprite(hotSpotNameTag, clickedHotSpot.Name.split("-")[0]);
+            updateTextSprite(hotSpotNameTag, clickedHotSpot.Name.split('-')[0]);
             for (var index in allHotSpots) {
                 if (allHotSpots[index].tag == clickedHotSpot) {
                     sectorSprite.position.set(allHotSpots[index].position.x * hotSpotScale, -allHotSpots[index].position.z * hotSpotScale, 1);
@@ -1420,19 +1409,15 @@ function loadCubePanoramaTexture(urls, onLoad, onProgress, onError) {
     var loaded = 0;
 
     function loadTexture(i) {
-
-        textureLoader.load(urls[i], function (texture) {
-
+        textureLoader.load(urls[i], function(texture) {
             cubeTexture[i] = texture;
 
             loaded++;
 
             if (loaded === urls.length) {
-
                 if (onLoad) onLoad(cubeTexture);
             }
-
-        }, function (xhr) {
+        }, function(xhr) {
             if (onProgress) {
                 onProgress(i, xhr);
             }
@@ -1466,10 +1451,10 @@ function showFirstHotSpot(hotSpotName, theta) {
         theta = 0;
     }
 
-    onHotSpotClicked(hotSpot, function () {
+    onHotSpotClicked(hotSpot, function() {
         // onWindowResize();
-        switchToOverviewDiv.style.visibility = "hidden";
-        document.getElementById("welcome").style.visibility = "hidden";
+        switchToOverviewDiv.style.visibility = 'hidden';
+        document.getElementById('welcome').style.visibility = 'hidden';
 
         switchToHotSpotView();
 
@@ -1479,7 +1464,7 @@ function showFirstHotSpot(hotSpotName, theta) {
         if (isShowThumbnail) {
             createThumbnails(true);
         }
-    }, function (index, xhr) {
+    }, function(index, xhr) {
         firstCubProgress[index] = xhr.loaded / xhr.total;
         var loadedProgress = 0;
 
@@ -1490,20 +1475,20 @@ function showFirstHotSpot(hotSpotName, theta) {
             loadedProgress += firstCubProgress[progressIndex];
         }
         var value = parseInt(loadedProgress / 6 * 100);
-        var progressBar = document.getElementById("loading_progress_bar");
+        var progressBar = document.getElementById('loading_progress_bar');
         progressBar.style.width = value + '%';
         progressBar.innerText = value + '%';
-    }, function () {
-        $("#loading_tip").text("加载失败");
+    }, function() {
+        $('#loading_tip').text('加载失败');
     });
 
-    document.getElementById("loading").style.visibility = "hidden";
+    document.getElementById('loading').style.visibility = 'hidden';
 }
 
 function showFirstHotSpotAfterLoading() {
     var hotSpot = house.HotSpots[0];
 
-    onFirstHotSpotClicked(hotSpot, onResourcesPrepared, function (index, xhr) {
+    onFirstHotSpotClicked(hotSpot, onResourcesPrepared, function(index, xhr) {
         firstCubProgress[index] = xhr.loaded / xhr.total;
         var loadedProgress = 0;
 
@@ -1514,14 +1499,14 @@ function showFirstHotSpotAfterLoading() {
             loadedProgress += firstCubProgress[progressIndex];
         }
         var value = parseInt(loadedProgress / 6 * 100);
-        var progressBar = document.getElementById("loading_progress_bar");
+        var progressBar = document.getElementById('loading_progress_bar');
         progressBar.style.width = value + '%';
         progressBar.innerText = value + '%';
-    }, function () {
-        $("#loading_tip").text("加载失败");
+    }, function() {
+        $('#loading_tip').text('加载失败');
     });
 
-    document.getElementById("loading").style.visibility = "hidden";
+    document.getElementById('loading').style.visibility = 'hidden';
 }
 
 function showVisibleHotSpots(hotSpot) {
@@ -1534,7 +1519,6 @@ function showVisibleHotSpots(hotSpot) {
 
     // show visible hot spots
     for (var index in allHotSpots) {
-
         if (hotSpot == allHotSpots[index].tag) {
             allHotSpots[index].visible = false;
         } else {
@@ -1581,15 +1565,15 @@ function contains(a, obj) {
 function onSwitch2DButtonClicked() {
     setAutoMode(false);
     switchToMap(true);
-    switch2DButton.material.map = textureLoader.load("./src/textures/button_2D_pressed.png");
-    switch3DButton.material.map = textureLoader.load("./src/textures/button_3D.png");
+    switch2DButton.material.map = textureLoader.load('./src/textures/button_2D_pressed.png');
+    switch3DButton.material.map = textureLoader.load('./src/textures/button_3D.png');
 }
 
 function onSwitch3DButtonClicked() {
     setAutoMode(false);
     switchToMap(false);
-    switch2DButton.material.map = textureLoader.load("./src/textures/button_2D.png");
-    switch3DButton.material.map = textureLoader.load("./src/textures/button_3D_pressed.png");
+    switch2DButton.material.map = textureLoader.load('./src/textures/button_2D.png');
+    switch3DButton.material.map = textureLoader.load('./src/textures/button_3D_pressed.png');
 }
 
 // function onSwitch2D3DButtonClicked() {
@@ -1599,14 +1583,13 @@ function onSwitch3DButtonClicked() {
 
 function setAutoMode(needAutoMode) {
     if (needAutoMode) {
-        switchAutoButton.material.map = textureLoader.load("./src/textures/button_Auto_pressed.png");
+        switchAutoButton.material.map = textureLoader.load('./src/textures/button_Auto_pressed.png');
         starAutoPlayDelay();
         isAutoButtonPressed = true;
-    }
-    else {
+    } else {
         stopAutoPlay();
         isAutoButtonPressed = false;
-        switchAutoButton.material.map = textureLoader.load("./src/textures/button_Auto.png");
+        switchAutoButton.material.map = textureLoader.load('./src/textures/button_Auto.png');
     }
 }
 
@@ -1615,17 +1598,15 @@ function onSwitchAutoButtonClicked() {
         setAutoMode(false);
         // switchToMap(true);
         if (houseShapeSprite.visible) {
-            switch2DButton.material.map = textureLoader.load("./src/textures/button_2D_pressed.png");
-        }
-        else {
-            switch3DButton.material.map = textureLoader.load("./src/textures/button_3D_pressed.png");
-        }
-    }
-    else {
-        if (houseShapeSprite.visible) {
-            switch2DButton.material.map = textureLoader.load("./src/textures/button_2D.png");
+            switch2DButton.material.map = textureLoader.load('./src/textures/button_2D_pressed.png');
         } else {
-            switch3DButton.material.map = textureLoader.load("./src/textures/button_3D.png");
+            switch3DButton.material.map = textureLoader.load('./src/textures/button_3D_pressed.png');
+        }
+    } else {
+        if (houseShapeSprite.visible) {
+            switch2DButton.material.map = textureLoader.load('./src/textures/button_2D.png');
+        } else {
+            switch3DButton.material.map = textureLoader.load('./src/textures/button_3D.png');
         }
         setAutoMode(true);
     }
@@ -1637,14 +1618,13 @@ function onVRButtonClicked() {
 
 function cameraSwitchAnimation() {
     if (isSwitching) {
-        console.log("camera: " + camera.position.x + "," + camera.position.y + "," + camera.position.z);
-        console.log("previousCameraPosition: " + previousCameraPosition.x + "," + previousCameraPosition.y + "," + previousCameraPosition.z);
+        console.log('camera: ' + camera.position.x + ',' + camera.position.y + ',' + camera.position.z);
+        console.log('previousCameraPosition: ' + previousCameraPosition.x + ',' + previousCameraPosition.y + ',' + previousCameraPosition.z);
         if (camera.position.y > previousCameraPosition.y && camera.position.y - previousCameraPosition.y < 0.01 || camera.position.y < previousCameraPosition.y && camera.position.y - previousCameraPosition.y > -0.01) {
             // camera.position.copy(previousCameraPosition);
             clickedHotSpot = null;
             isSwitching = false;
-        }
-        else {
+        } else {
             camera.position.x += switchSpeed.x;
             camera.position.y += switchSpeed.y;
             camera.position.z += switchSpeed.z;
@@ -1658,10 +1638,9 @@ function cameraSwitchAnimation() {
 
 function cameraZoomAnimation() {
     if (isZooming) {
-        if ((zoomSpeed > 0 && camera.fov >= targetZoomFov) || (zoomSpeed < 0 && camera.fov <= targetZoomFov)) {
+        if (zoomSpeed > 0 && camera.fov >= targetZoomFov || zoomSpeed < 0 && camera.fov <= targetZoomFov) {
             isZooming = false;
-        }
-        else {
+        } else {
             camera.fov += zoomSpeed;
         }
     }
@@ -1692,7 +1671,7 @@ function starAutoPlayDelay() {
     if (autoPlayTimer != undefined) {
         clearTimeout(autoPlayTimer);
     }
-    autoPlayTimer = setTimeout(function () {
+    autoPlayTimer = setTimeout(function() {
         if (!isMouseDown) {
             isAutoRotate = true;
             switchToMap(!is3DPrepared);
@@ -1701,7 +1680,7 @@ function starAutoPlayDelay() {
 }
 
 function stopAutoPlay() {
-    console.log("stopAutoPlay");
+    console.log('stopAutoPlay');
     if (autoPlayTimer != undefined) {
         clearTimeout(autoPlayTimer);
     }
@@ -1743,25 +1722,22 @@ function onSwitchFullscreenButtonClicked() {
         } else if (document.msExitFullscreen) {
             document.msExitFullscreen();
         }
-    } else {
-        if (document.documentElement.requestFullscreen) {
-            document.documentElement.requestFullscreen();
-        } else if (document.documentElement.mozRequestFullScreen) {
-            document.documentElement.mozRequestFullScreen();
-        } else if (document.documentElement.webkitRequestFullscreen) {
-            document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-        } else if (document.body.msRequestFullscreen) {
-            document.body.msRequestFullscreen();
-        }
+    } else if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+        document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+        document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    } else if (document.body.msRequestFullscreen) {
+        document.body.msRequestFullscreen();
     }
 
-    switchFullscreenButton.innerText = isFullscreen ? "退出全屏" : "全屏";
+    switchFullscreenButton.innerText = isFullscreen ? '退出全屏' : '全屏';
     isOverviewAutoRotate = !isFullscreen;
     overviewCameraController.autoRotate = isOverviewAutoRotate;
 }
 
 function createHouse() {
-
     totalPanoramaImageCount = house.HotSpots.length;
 
     houseObj = new THREE.Object3D();
@@ -1825,15 +1801,15 @@ function getHotSpotFromName(hotSpotName) {
 function loadFaceTexture(roomFace, roomObj, smallRoomObj) {
     var faceTexturePath = roomFace.ImagePath.replace(ossHost, domain);
 
-    var texture = textureLoader.load(faceTexturePath, function (loadedTexture) {
-        loadedTexture.minFilter = THREE.LinearFilter;  // fix image is not power of two (xxx). Resized to xxx img
+    var texture = textureLoader.load(faceTexturePath, function(loadedTexture) {
+        loadedTexture.minFilter = THREE.LinearFilter; // fix image is not power of two (xxx). Resized to xxx img
         // create room face
         var planeGeometry = new THREE.PlaneBufferGeometry(roomFace.Width, roomFace.Height, 1, 1);
         var planeMaterial = new THREE.MeshBasicMaterial({ map: loadedTexture, side: THREE.BackSide, alphaTest: 0.1 });
         planeMaterial.transparent = true;
         planeMaterial.depthWrite = true;
         var facePlane = new THREE.Mesh(planeGeometry, planeMaterial);
-        facePlane.rotation.reorder("YXZ");
+        facePlane.rotation.reorder('YXZ');
         facePlane.rotation.set(THREE.Math.degToRad(roomFace.Rotation.x), THREE.Math.degToRad(roomFace.Rotation.y), THREE.Math.degToRad(roomFace.Rotation.z));
         facePlane.position.set(roomFace.Position.x, roomFace.Position.y, -roomFace.Position.z);
         roomFace.facePlane = facePlane;
@@ -1841,7 +1817,7 @@ function loadFaceTexture(roomFace, roomObj, smallRoomObj) {
 
         var smallFacePlane = facePlane.clone();
         smallRoomObj.add(smallFacePlane);
-    }, function (xhr) {
+    }, function(xhr) {
         onRoomFaceTextureLoading(roomFace, xhr);
     });
 
@@ -1849,8 +1825,7 @@ function loadFaceTexture(roomFace, roomObj, smallRoomObj) {
 }
 
 function setOverviewCameraControllerDistance(isLandscape) {
-
-    debugLog("setOverviewCameraControllerDistance");
+    debugLog('setOverviewCameraControllerDistance');
     if (houseSize == undefined || overviewCameraController == undefined) {
         return;
     }
@@ -1944,7 +1919,7 @@ function onRoomFaceTextureLoading(roomFace, xhr) {
     }
 }
 function on3DHousePrepared() {
-    console.log("on3DHousePrepared");
+    console.log('on3DHousePrepared');
     is3DPrepared = true;
     is3DMode = true;
     // if (fullScreen3DHouseButton) {
@@ -1955,7 +1930,7 @@ function on3DHousePrepared() {
 }
 
 function onResourcesPrepared() {
-    console.log("ResoucePrepared");
+    console.log('ResoucePrepared');
     // onWindowResize();
     createThumbnails(true);
     var hotSpot = house.HotSpots[0];
@@ -1963,17 +1938,17 @@ function onResourcesPrepared() {
     onThumbnailClicked(hotSpot.thumbnailElement, false);
 
     initMap();
-    document.getElementById("welcome").style.visibility = "hidden";
-    $("#controlTip")[0].style.visibility = "visible";
+    document.getElementById('welcome').style.visibility = 'hidden';
+    $('#controlTip')[0].style.visibility = 'visible';
 
-    setTimeout(function () {
-        $("#controlTip").fadeOut(3000);
+    setTimeout(function() {
+        $('#controlTip').fadeOut(3000);
     }, 2000);
 
-    document.getElementById("controlDiv").style.visibility = "visible";
+    document.getElementById('controlDiv').style.visibility = 'visible';
     starAutoPlay();
 
-    //直接显示第一个全景图时会导致camera位置不对
+    // 直接显示第一个全景图时会导致camera位置不对
     // overviewCameraController.update();
 }
 
@@ -1989,13 +1964,13 @@ function onSwitchVRMode() {
         if (isLandscapeOrNot()) {
             switchVRMode(true);
         } else {
-            vrStartTip.style.visibility = "visible";
+            vrStartTip.style.visibility = 'visible';
             vrStartTip.style.opacity = 1;
-            $("#vrStartTip").stop();
-            $("#vrStartTip").show();
+            $('#vrStartTip').stop();
+            $('#vrStartTip').show();
             panoramaCameraController.enabled = false;
 
-            $("#vrStartTip").fadeOut(5000);
+            $('#vrStartTip').fadeOut(5000);
         }
     } else {
         switchVRMode(false);
@@ -2042,10 +2017,10 @@ function enableVRMode() {
         camera.position.z = 300;
     } else {
         panoramaCameraController.enabled = false;
-        $("#vrStartTip").stop();
+        $('#vrStartTip').stop();
     }
 
-    vrStartTip.style.visibility = "hidden";
+    vrStartTip.style.visibility = 'hidden';
 }
 
 function disableVRMode() {
@@ -2065,13 +2040,13 @@ function disableVRMode() {
         clearTimeout(vrGazeTimer);
     }
 
-    vrStartTip.style.visibility = "hidden";
+    vrStartTip.style.visibility = 'hidden';
 }
 
 function debugLog(message) {
     if (isDebugMode) {
         debugTextValue += message;
-        debugTextValue += "\n";
+        debugTextValue += '\n';
 
         debugText.value = debugTextValue;
     }
@@ -2091,23 +2066,23 @@ function createTextSprite(message, parameters) {
 function createTextTexture(message, parameters) {
     if (parameters === undefined) parameters = {};
 
-    var fontface = parameters.hasOwnProperty("fontface") ?
-        parameters["fontface"] : "Arial";
+    var fontface = parameters.hasOwnProperty('fontface')
+        ? parameters['fontface'] : 'Arial';
 
-    var fontsize = parameters.hasOwnProperty("fontsize") ?
-        parameters["fontsize"] : 18;
+    var fontsize = parameters.hasOwnProperty('fontsize')
+        ? parameters['fontsize'] : 18;
 
-    var borderThickness = parameters.hasOwnProperty("borderThickness") ?
-        parameters["borderThickness"] : 0;
+    var borderThickness = parameters.hasOwnProperty('borderThickness')
+        ? parameters['borderThickness'] : 0;
 
-    var borderColor = parameters.hasOwnProperty("borderColor") ?
-        parameters["borderColor"] : { r: 0, g: 0, b: 0, a: 1.0 };
+    var borderColor = parameters.hasOwnProperty('borderColor')
+        ? parameters['borderColor'] : { r: 0, g: 0, b: 0, a: 1.0 };
 
-    var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?
-        parameters["backgroundColor"] : { r: 255, g: 255, b: 255, a: 1.0 };
+    var backgroundColor = parameters.hasOwnProperty('backgroundColor')
+        ? parameters['backgroundColor'] : { r: 255, g: 255, b: 255, a: 1.0 };
 
-    var cornerAngle = parameters.hasOwnProperty("cornerAngle") ?
-        parameters["cornerAngle"] : 10;
+    var cornerAngle = parameters.hasOwnProperty('cornerAngle')
+        ? parameters['cornerAngle'] : 10;
 
     var canvas = document.createElement('canvas');
     canvas.width = fontsize * 12;
@@ -2115,7 +2090,7 @@ function createTextTexture(message, parameters) {
 
     var context = canvas.getContext('2d');
 
-    context.font = "normal " + fontsize + "px " + fontface;
+    context.font = 'normal ' + fontsize + 'px ' + fontface;
     context.textAlign = 'center';
     context.textBaseline = 'middle';
 
@@ -2127,11 +2102,11 @@ function createTextTexture(message, parameters) {
     var y = (canvas.height + borderThickness) / 2;
 
     // background color
-    context.fillStyle = "rgba(" + backgroundColor.r + "," + backgroundColor.g + ","
-        + backgroundColor.b + "," + backgroundColor.a + ")";
+    context.fillStyle = 'rgba(' + backgroundColor.r + ',' + backgroundColor.g + ','
+        + backgroundColor.b + ',' + backgroundColor.a + ')';
     // border color
-    context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + ","
-        + borderColor.b + "," + borderColor.a + ")";
+    context.strokeStyle = 'rgba(' + borderColor.r + ',' + borderColor.g + ','
+        + borderColor.b + ',' + borderColor.a + ')';
 
     context.lineWidth = borderThickness;
     var border = 100;
@@ -2139,7 +2114,7 @@ function createTextTexture(message, parameters) {
     // 1.4 is extra height factor for text below baseline: g,j,p,q.
 
     // text color
-    context.fillStyle = "rgba(255, 255, 255, 1.0)";
+    context.fillStyle = 'rgba(255, 255, 255, 1.0)';
 
     context.fillText(message, x, y);
 
@@ -2179,7 +2154,7 @@ function roundRect(ctx, x, y, w, h, r) {
 }
 
 function createHotSpotSprite(texture) {
-    var clickEvent = function (circleSprite) {
+    var clickEvent = function(circleSprite) {
         onThumbnailClicked(circleSprite.parent.parent.tag.thumbnailElement, true);
     };
 
@@ -2229,10 +2204,10 @@ function createHotSpotSprite(texture) {
 }
 
 function onThumbnailControllerClicked() {
-    if ($("#thumbnail-list")[0].style.display == "none") {
-        $("#thumbnail-list").slideDown("slow");
+    if ($('#thumbnail-list')[0].style.display == 'none') {
+        $('#thumbnail-list').slideDown('slow');
     } else {
-        $("#thumbnail-list").slideUp("slow");
+        $('#thumbnail-list').slideUp('slow');
     }
 }
 
@@ -2242,29 +2217,28 @@ function Thumbnail() {
     this.onclick;
     this.isSelected = false;
 
-    this.click = function () {
+    this.click = function() {
         if (this.onclick) {
             this.onclick(this);
         }
-    }
+    };
 }
 
 function createThumbnails(isVisible) {
     if (isVisible) {
-        $("#thumbnail-controller")[0].style.visibility = "visible";
-    }
-    else {
-        $("#thumbnail-controller")[0].style.visibility = "hidden";
+        $('#thumbnail-controller')[0].style.visibility = 'visible';
+    } else {
+        $('#thumbnail-controller')[0].style.visibility = 'hidden';
     }
 
     var thumbnailList = getThumbnailList();
-    var template = $("#thumbnail");
+    var template = $('#thumbnail');
 
     for (var index in thumbnailList) {
-        var clonedThumbnail = template.clone().appendTo("#thumbnail-list");
-        clonedThumbnail.find("#thumbnail-name")[0].innerText = thumbnailList[index].name;
-        clonedThumbnail.find("#thumbnail-image")[0].src = thumbnailList[index].imagePath;
-        clonedThumbnail[0].onclick = function () {
+        var clonedThumbnail = template.clone().appendTo('#thumbnail-list');
+        clonedThumbnail.find('#thumbnail-name')[0].innerText = thumbnailList[index].name;
+        clonedThumbnail.find('#thumbnail-image')[0].src = thumbnailList[index].imagePath;
+        clonedThumbnail[0].onclick = function() {
             onThumbnailClicked($(this), true);
         };
         clonedThumbnail[0].thumbnailData = thumbnailList[index];
@@ -2296,13 +2270,13 @@ function getThumbnailList() {
 }
 
 function instantiateThumbnail(hotSpot) {
-    var thumbnailPath = domain + houseId + "/ThumbnailImages/" + hotSpot.ImagePath.substring(hotSpot.ImagePath.lastIndexOf("/") + 1);
+    var thumbnailPath = domain + houseId + '/ThumbnailImages/' + hotSpot.ImagePath.substring(hotSpot.ImagePath.lastIndexOf('/') + 1);
 
 
     var thumbnail = new Thumbnail();
-    thumbnail.name = hotSpot.Name.split("-")[0];
+    thumbnail.name = hotSpot.Name.split('-')[0];
     thumbnail.imagePath = thumbnailPath;
-    thumbnail.onclick = function () {
+    thumbnail.onclick = function() {
         onHotSpotClicked(hotSpot, onFirstHotSpotClicked(hotSpot));
     };
 
@@ -2310,12 +2284,12 @@ function instantiateThumbnail(hotSpot) {
 }
 
 function onThumbnailClicked(thumbnailElement, needClick) {
-    thumbnailElement[0].children[0].classList.remove("thumbnail-unselected");
-    thumbnailElement[0].children[0].classList.add("thumbnail-selected");
+    thumbnailElement[0].children[0].classList.remove('thumbnail-unselected');
+    thumbnailElement[0].children[0].classList.add('thumbnail-selected');
 
-    thumbnailElement.siblings().each(function (index, domElement) {
-        domElement.children[0].classList.remove("thumbnail-selected");
-        domElement.children[0].classList.add("thumbnail-unselected");
+    thumbnailElement.siblings().each(function(index, domElement) {
+        domElement.children[0].classList.remove('thumbnail-selected');
+        domElement.children[0].classList.add('thumbnail-unselected');
 
         if (domElement.thumbnailData) {
             domElement.thumbnailData.isSelected = false;
